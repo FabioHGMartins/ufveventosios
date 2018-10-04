@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrincipalView" customModule="SiseventosUFViOS" customModuleProvider="target">
+            <connections>
+                <outlet property="filtrarBt" destination="9Ws-Os-lXk" id="KS1-eH-muo"/>
+                <outlet property="progress" destination="5yd-aS-2ld" id="cDq-7f-GlI"/>
+                <outlet property="tableView" destination="V08-Zc-abj" id="NTu-GV-aJh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOo-xw-1Se">
+                    <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wch-qB-dhg">
+                            <rect key="frame" x="0.0" y="30" width="375" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="4ar-mE-mSR"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ws-Os-lXk">
+                            <rect key="frame" x="50" y="8" width="275" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Filtrar Categorias">
+                                <color key="titleColor" red="0.6470588235294118" green="0.14117647058823529" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="13"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="filtrarCategoria" destination="-1" eventType="touchDown" id="0A0-nz-D0o"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.61568627450980395" green="0.13725490196078433" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="wch-qB-dhg" secondAttribute="bottom" id="7Fo-OQ-WJ5"/>
+                        <constraint firstAttribute="height" constant="60" id="TlF-Rc-Pmb"/>
+                        <constraint firstItem="9Ws-Os-lXk" firstAttribute="leading" secondItem="hOo-xw-1Se" secondAttribute="leading" constant="50" id="Vi1-2l-SrL"/>
+                        <constraint firstItem="wch-qB-dhg" firstAttribute="leading" secondItem="hOo-xw-1Se" secondAttribute="leading" id="apN-Y7-trz"/>
+                        <constraint firstAttribute="bottom" secondItem="9Ws-Os-lXk" secondAttribute="bottom" constant="8" id="ckL-kQ-DFt"/>
+                        <constraint firstItem="9Ws-Os-lXk" firstAttribute="centerX" secondItem="hOo-xw-1Se" secondAttribute="centerX" id="kmA-zw-kQO"/>
+                        <constraint firstAttribute="trailing" secondItem="wch-qB-dhg" secondAttribute="trailing" id="rNc-1k-GeN"/>
+                        <constraint firstAttribute="trailing" secondItem="9Ws-Os-lXk" secondAttribute="trailing" constant="50" id="rXn-nW-Ekv"/>
+                        <constraint firstItem="9Ws-Os-lXk" firstAttribute="top" secondItem="hOo-xw-1Se" secondAttribute="top" constant="8" id="ucp-4d-lnF"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V08-Zc-abj">
+                    <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="noh-GN-yH5"/>
+                        <outlet property="delegate" destination="-1" id="jAC-yN-55C"/>
+                    </connections>
+                </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5yd-aS-2ld">
+                    <rect key="frame" x="177" y="323.5" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="V08-Zc-abj" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="4fW-OQ-pxu"/>
+                <constraint firstItem="hOo-xw-1Se" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9U7-H7-bSW"/>
+                <constraint firstItem="V08-Zc-abj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AX1-pc-CnR"/>
+                <constraint firstItem="hOo-xw-1Se" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FL7-KG-j8y"/>
+                <constraint firstItem="5yd-aS-2ld" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bX7-HR-yHt"/>
+                <constraint firstItem="5yd-aS-2ld" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gpV-5e-Dg8"/>
+                <constraint firstItem="V08-Zc-abj" firstAttribute="top" secondItem="hOo-xw-1Se" secondAttribute="bottom" id="oK0-m0-hIk"/>
+                <constraint firstItem="V08-Zc-abj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="pNu-Wu-ZcE"/>
+                <constraint firstItem="hOo-xw-1Se" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wrz-cf-6YH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

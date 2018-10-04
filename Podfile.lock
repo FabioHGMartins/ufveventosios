@@ -1,0 +1,21 @@
+PODS:
+  - AKMaskField (2.0.3)
+  - Alamofire (4.7.3)
+  - KYDrawerController (2.0.4)
+  - SwiftyJSON (4.1.0)
+
+DEPENDENCIES:
+  - AKMaskField
+  - Alamofire (~> 4.5)
+  - KYDrawerController
+  - SwiftyJSON (~> 4.0)
+
+SPEC CHECKSUMS:
+  AKMaskField: b6d147524813e62cd3f15475fa2200ce7a3d2620
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  KYDrawerController: cf5839877c442132123e9d482f458821026defdf
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+
+PODFILE CHECKSUM: 7f9a960a586f5e9d2f7538a1e691d57fec7f7dbc
+
+COCOAPODS: 1.3.1
