@@ -39,7 +39,7 @@ class LoginView: UIViewController {
     }
     
     @IBAction func cadastrarUsuario() {
-        let cadastrarView = CadastrarUsuarioView(nibName:"CadastroUsuarioView", bundle: nil)
+        let cadastrarView = CadastrarUsuarioView()
         self.navigationController?.pushViewController(cadastrarView, animated: true)
     }
     

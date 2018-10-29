@@ -14,6 +14,8 @@ class FiltrarCategoriasView: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var aplicarBt:UIButton?
     @IBOutlet var progress:UIActivityIndicatorView?
     
+    @IBOutlet var margemView:UIView?
+    
     var cells:Array<CategoriaCell>?
     let requester = CategoriaRequester()
 
@@ -21,8 +23,11 @@ class FiltrarCategoriasView: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         self.title = "Escolher Categorias"
+        
         let xib = UINib(nibName: "CategoriaCell", bundle: nil)
         self.tableView?.register(xib, forCellReuseIdentifier: "cell")
+        
+        
         requester.getCategoria() { (ready, success) in
             if(ready) {
                 if (success) {
@@ -32,7 +37,6 @@ class FiltrarCategoriasView: UIViewController, UITableViewDelegate, UITableViewD
                 self.progress?.stopAnimating()
             }
         }
-        
     }
     
     @IBAction func aplicarFiltro() {
@@ -43,12 +47,12 @@ class FiltrarCategoriasView: UIViewController, UITableViewDelegate, UITableViewD
                 UsuarioSingleton.shared.categoriasPref?.append(Categoria("\(i+1)",(cells![i].categoriaLb?.text)!))
             }
         }
-        print(UsuarioSingleton.shared.categoriasPref)
+        print(UsuarioSingleton.shared.categoriasPref!)
         var ids = Array<String>()
         for cat in UsuarioSingleton.shared.categoriasPref! {
             ids.append(cat.id)
         }
-        requester.postPreferenciasCategorias(idUsuario: (UsuarioSingleton.shared.usuario?.id)!, idCategorias: ids) { (ready,success) in
+        requester.putPreferenciasCategorias(idUsuario: (UsuarioSingleton.shared.usuario?.id)!, idCategorias: ids) { (ready,success) in
             if (ready) {
                 if (!success) {
                     UsuarioSingleton.shared.categoriasPref = aux
@@ -57,6 +61,7 @@ class FiltrarCategoriasView: UIViewController, UITableViewDelegate, UITableViewD
             }
             
         }
+        UsuarioSingleton.shared.categoriasUpdate = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

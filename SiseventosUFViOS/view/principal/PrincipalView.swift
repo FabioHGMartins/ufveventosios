@@ -9,12 +9,18 @@
 import UIKit
 import KYDrawerController
 
-class PrincipalView: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PrincipalView: UIViewController {
     
     @IBOutlet var filtrarBt:UIButton?
     @IBOutlet var tableView:UITableView?
+    
+    @IBOutlet var margemView:UIView?
 
     @IBOutlet var progress:UIActivityIndicatorView?
+    
+    let requester = EventosRequester()
+    var offset = 0
+    var limit = 110
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,24 +48,32 @@ class PrincipalView: UIViewController, UITableViewDataSource, UITableViewDelegat
             action: #selector(abrirMenu)
         )
         
-        
-        let requester = EventosRequester()
-        self.progress?.isHidden = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         self.progress?.startAnimating()
-        
-        let offset = 0
-        let limit = 110
-        requester.getEventos(offset: offset, limit: limit) { (ready, success) in
-            if(ready) {
-                self.progress?.stopAnimating()
-                self.progress!.isHidden = true
-                if (success) {
-                    print(EventosSingleton.shared.eventos!)
-                    self.tableView?.reloadData()
+        if(UsuarioSingleton.shared.categoriasUpdate) {
+            if ((UsuarioSingleton.shared.categoriasPref?.isEmpty)!) {
+                requester.getEventos(offset: offset, limit: limit) { (ready, success) in
+                    if(ready) {
+                        self.progress?.stopAnimating()
+                        if (success) {
+                            self.tableView?.reloadData()
+                        }
+                    }
+                }
+            } else {
+                requester.getEventosPorUsuario(idUsuario: (UsuarioSingleton.shared.usuario?.id)!,offset: offset, limit: limit) { (ready, success) in
+                    if(ready) {
+                        if (success) {
+                            self.tableView?.reloadData()
+                        }
+                    }
                 }
             }
+            UsuarioSingleton.shared.categoriasUpdate = false
         }
-        
+        self.progress?.stopAnimating()
     }
     
     
@@ -82,7 +96,36 @@ class PrincipalView: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.navigationController?.pushViewController(filtrarCategoriasView, animated: true)
     }
     
-    
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let  height = scrollView.frame.size.height
+//        let contentYoffset = scrollView.contentOffset.y
+//        let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+//        //chegou ao fim da tabela
+//        if distanceFromBottom < height {
+//            limit += 10
+//            if ((UsuarioSingleton.shared.categoriasPref?.isEmpty)!) {
+//                requester.getEventos(offset: offset, limit: limit) { (ready, success) in
+//                    if(ready) {
+//                        self.progress?.stopAnimating()
+//                        if (success) {
+//                            self.tableView?.reloadData()
+//                        }
+//                    }
+//                }
+//            } else {
+//                requester.getEventosPorUsuario(idUsuario: (UsuarioSingleton.shared.usuario?.id)!,offset: offset, limit: limit) { (ready, success) in
+//                    if(ready) {
+//                        if (success) {
+//                            self.tableView?.reloadData()
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+}
+
+extension PrincipalView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return EventosSingleton.shared.eventos.count
@@ -105,12 +148,8 @@ class PrincipalView: UIViewController, UITableViewDataSource, UITableViewDelegat
             cell.dataLb?.text = dataString
         } else  { cell.dataLb?.text = "21/10" }
         
-        
-        formato.dateFormat = "HH:mm:ss"
-        novoFormato.dateFormat = "HH:mm"
-        
-        let horaInicio = novoFormato.string(from: formato.date(from: evento.horainicio)!)
-        let horaFim = novoFormato.string(from: formato.date(from: evento.horafim)!)
+        let horaInicio = formatarData(valor: evento.horainicio, formatoAtual: "HH:mm:ss", formatoNovo: "HH:mm")
+        let horaFim = formatarData(valor: evento.horafim, formatoAtual: "HH:mm:ss", formatoNovo: "HH:mm")
         cell.horarioLb?.text = "Horário: \(horaInicio) - \(horaFim)"
         
         
@@ -119,14 +158,18 @@ class PrincipalView: UIViewController, UITableViewDataSource, UITableViewDelegat
         return cell
     }
     
+}
+
+extension PrincipalView: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let linha = indexPath.row
         let evento = EventosSingleton.shared.eventos![linha]
         
-//        let vc = DetalhesCarroViewController(nibName: "DetalhesCarroViewController", bundle: nil)
-//        vc.carro = carro
-//        self.navigationController!.pushViewController(vc, animated: false)
+        let vc = DetalhesEventoView(nibName: "DetalhesEventoView", bundle: nil)
+        vc.evento = evento
+        self.navigationController!.pushViewController(vc, animated: false)
         
     }
-
+    
 }

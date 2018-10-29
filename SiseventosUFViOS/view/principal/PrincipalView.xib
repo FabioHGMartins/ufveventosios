@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrincipalView" customModule="SiseventosUFViOS" customModuleProvider="target">
             <connections>
                 <outlet property="filtrarBt" destination="9Ws-Os-lXk" id="KS1-eH-muo"/>
+                <outlet property="margemView" destination="hOo-xw-1Se" id="U6Q-1N-thx"/>
                 <outlet property="progress" destination="5yd-aS-2ld" id="cDq-7f-GlI"/>
                 <outlet property="tableView" destination="V08-Zc-abj" id="NTu-GV-aJh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -70,7 +71,7 @@
                         <outlet property="delegate" destination="-1" id="jAC-yN-55C"/>
                     </connections>
                 </tableView>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5yd-aS-2ld">
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5yd-aS-2ld">
                     <rect key="frame" x="177" y="323.5" width="20" height="20"/>
                 </activityIndicatorView>
             </subviews>

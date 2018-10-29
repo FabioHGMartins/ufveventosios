@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FiltrarCategoriasView" customModule="SiseventosUFViOS" customModuleProvider="target">
             <connections>
                 <outlet property="aplicarBt" destination="Ib9-Na-9iY" id="S3R-B5-9UP"/>
+                <outlet property="margemView" destination="TAT-ON-tLd" id="i5z-tq-K1U"/>
                 <outlet property="progress" destination="xPj-CI-Hq1" id="vFo-OX-0CZ"/>
                 <outlet property="tableView" destination="c8t-ue-6ao" id="FqE-DV-Flu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

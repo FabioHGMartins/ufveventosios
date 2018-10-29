@@ -37,4 +37,29 @@ class EventosRequester {
         }
     }
     
+    func getEventosPorUsuario(idUsuario:String, offset:Int, limit:Int, handlerFinish: @escaping ((_ ready:Bool, _ success:Bool)->())) {
+        let parameters = ["":""]
+        Endpoints.shared.makeRequest(apiUrl: Endpoints.shared.eventosPorUsuario(idUsuario,offset, limit), method: .get, parameters: parameters, callbackSuccess:{ (info:Data?) in
+            
+            var eventos: Array<Evento>?
+            if let responseData = info {
+                print(responseData)
+                let decoder = JSONDecoder()
+                do {
+                    try eventos = decoder.decode(Array<Evento>.self, from: responseData)
+                } catch {
+                    print(error)
+                }
+                
+            }
+            
+            EventosSingleton.shared.eventos = eventos
+            handlerFinish(true,true)
+            
+        }) { (error) in
+            print("Error getEventosPorUsuario \(String(describing: error))")
+            handlerFinish(true,false)
+        }
+    }
+    
 }

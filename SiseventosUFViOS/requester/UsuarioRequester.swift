@@ -31,6 +31,15 @@ class UsuarioRequester {
                 AppControl.preferences.set(usuario.googleId, forKey: "googleId")
                 AppControl.preferences.set(usuario.foto, forKey: "foto")
                 
+                let categoriasRequester = CategoriaRequester()
+                categoriasRequester.getPreferenciasCategoria(idUsuario: usuario.id) { (ready,success) in
+                    if (ready) {
+                        if (success) {
+                            
+                        }
+                    }
+                }
+                
                 handleFinish((ready: true, success: true))
             } else {
                 Alerta.alerta("Credenciais inválidas", msg: "Por favor insira uma combinação válida de usuário e senha.", view: self.view!)

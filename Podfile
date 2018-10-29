@@ -7,4 +7,6 @@ target 'SiseventosUFViOS' do
  pod 'AKMaskField'
  pod 'SwiftyJSON', '~> 4.0'
  pod 'KYDrawerController'
+ pod 'GoogleMaps'
+ pod 'GooglePlaces'
 end

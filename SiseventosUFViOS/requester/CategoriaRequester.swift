@@ -63,5 +63,17 @@ class CategoriaRequester {
         }
     }
     
+    func putPreferenciasCategorias(idUsuario:String, idCategorias: Array<String>, handlerFinish: @escaping ((_ ready:Bool, _ success:Bool)->())){
+        let jsonObj : JSON = ["categorias": idCategorias]
+        let parameters = ["data": jsonObj]
+        
+        Endpoints.shared.makeRequest(apiUrl: Endpoints.shared.updatePreferenciasDeCategorias(idUsuario), method: .put, parameters: parameters, callbackSuccess: {(info:Data?) in
+            handlerFinish(true,true)
+        }){ (error) in
+            print("Error putPreferenciasCategorias")
+            handlerFinish(true,false)
+        }
+    }
+    
 }
 
