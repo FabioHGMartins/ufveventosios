@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.backgroundColor = UIColor.white
         
-        GMSServices.provideAPIKey("AIzaSyC2vzuwOgPqc-bKKZZ_OykqsTYx6qRTTe8")
+        GMSServices.provideAPIKey(GMS_KEY)
         
         let splashScreenView = SplashScreen(nibName: "SplashScreen", bundle: nil)
         

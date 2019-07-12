@@ -22,6 +22,7 @@
 		5A5C3F2F217CD94B00A92A8E /* expand.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C3F2E217CD94B00A92A8E /* expand.png */; };
 		5A5C3F31217CDDBF00A92A8E /* ampliar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C3F30217CDDBE00A92A8E /* ampliar.png */; };
 		5A5C3F33217CE77F00A92A8E /* reduce.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C3F32217CE77F00A92A8E /* reduce.png */; };
+		5A67601D22D8FFBA0079C57D /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A67601C22D8FFBA0079C57D /* Keys.swift */; };
 		5A6A966022C5238E00B54D72 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A965E22C5238E00B54D72 /* SplashScreen.swift */; };
 		5A6A966122C5238E00B54D72 /* SplashScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A965F22C5238E00B54D72 /* SplashScreen.xib */; };
 		5A6A966822C53A0800B54D72 /* SobreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A966622C53A0800B54D72 /* SobreView.swift */; };
@@ -141,6 +142,7 @@
 		5A5C3F2E217CD94B00A92A8E /* expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expand.png; path = ../../../../../../Downloads/expand.png; sourceTree = "<group>"; };
 		5A5C3F30217CDDBE00A92A8E /* ampliar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ampliar.png; path = ../../../../../../Downloads/ampliar.png; sourceTree = "<group>"; };
 		5A5C3F32217CE77F00A92A8E /* reduce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reduce.png; path = ../../../../../../Downloads/reduce.png; sourceTree = "<group>"; };
+		5A67601C22D8FFBA0079C57D /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		5A6A965E22C5238E00B54D72 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		5A6A965F22C5238E00B54D72 /* SplashScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreen.xib; sourceTree = "<group>"; };
 		5A6A966622C53A0800B54D72 /* SobreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobreView.swift; sourceTree = "<group>"; };
@@ -299,6 +301,14 @@
 			path = util;
 			sourceTree = "<group>";
 		};
+		5A67601B22D8FFA20079C57D /* keys */ = {
+			isa = PBXGroup;
+			children = (
+				5A67601C22D8FFBA0079C57D /* Keys.swift */,
+			);
+			path = keys;
+			sourceTree = "<group>";
+		};
 		5A6B38262139AF00005FDF43 = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +334,7 @@
 		5A6B38312139AF00005FDF43 /* SiseventosUFViOS */ = {
 			isa = PBXGroup;
 			children = (
+				5A67601B22D8FFA20079C57D /* keys */,
 				5A2E07D2214453D700D6F2E5 /* requester */,
 				5ADF6FFE2142D809002D61A3 /* resources */,
 				5ADF6FF42142CFCD002D61A3 /* view */,
@@ -595,7 +606,7 @@
 					5A6B382E2139AF00005FDF43 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					5A6B38422139AF00005FDF43 = {
 						CreatedOnToolsVersion = 9.2;
@@ -812,6 +823,7 @@
 				5A6B38692139BFEF005FDF43 /* Programacao.swift in Sources */,
 				5A6B386B2139C1A5005FDF43 /* Evento.swift in Sources */,
 				5A412B3B214EDDC200598DA8 /* AppControl.swift in Sources */,
+				5A67601D22D8FFBA0079C57D /* Keys.swift in Sources */,
 				5A9FC7F82142F38F0033C760 /* CadastrarUsuarioView.swift in Sources */,
 				5ADC39D321B06A30000B2FB1 /* MyNavigationController.swift in Sources */,
 				5A6A966022C5238E00B54D72 /* SplashScreen.swift in Sources */,
@@ -983,16 +995,16 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Universidade Federal de Vicosa (7S2H235A78)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7S2H235A78;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=*]" = PY2V38DX57;
 				INFOPLIST_FILE = SiseventosUFViOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.labd2m.UFVEventosIOS2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "122b79bb-1ab8-42a0-b3e9-10fe615f1f33";
-				PROVISIONING_PROFILE_SPECIFIER = siseventosUFVDebug;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SiseventosUFViOS/util/SiseventosUFViOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1008,7 +1020,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Universidade Federal de Vicosa (7S2H235A78)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SiseventosUFViOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
