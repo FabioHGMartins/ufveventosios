@@ -13,14 +13,24 @@
 		5A2D76FC217E2D9C009C7534 /* ProgramacaoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2D76FB217E2D9C009C7534 /* ProgramacaoCell.xib */; };
 		5A2D76FE217E3BA6009C7534 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D76FD217E3BA6009C7534 /* Utilities.swift */; };
 		5A2E07D4214453F200D6F2E5 /* UsuarioRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E07D3214453F200D6F2E5 /* UsuarioRequester.swift */; };
+		5A3EA8A122CBD1D400759806 /* NotificacoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EA89F22CBD1D400759806 /* NotificacoesView.swift */; };
+		5A3EA8A222CBD1D400759806 /* NotificacoesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EA8A022CBD1D400759806 /* NotificacoesView.xib */; };
 		5A412B37214ECCD500598DA8 /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A412B36214ECCD500598DA8 /* Alerta.swift */; };
 		5A412B39214ECEE000598DA8 /* UsuarioSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A412B38214ECEE000598DA8 /* UsuarioSingleton.swift */; };
 		5A412B3B214EDDC200598DA8 /* AppControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A412B3A214EDDC200598DA8 /* AppControl.swift */; };
+		5A460B6A22CA8CC600A7F506 /* DrawRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A460B6922CA8CC600A7F506 /* DrawRoute.swift */; };
 		5A5C3F2F217CD94B00A92A8E /* expand.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C3F2E217CD94B00A92A8E /* expand.png */; };
 		5A5C3F31217CDDBF00A92A8E /* ampliar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C3F30217CDDBE00A92A8E /* ampliar.png */; };
 		5A5C3F33217CE77F00A92A8E /* reduce.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C3F32217CE77F00A92A8E /* reduce.png */; };
+		5A6A966022C5238E00B54D72 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A965E22C5238E00B54D72 /* SplashScreen.swift */; };
+		5A6A966122C5238E00B54D72 /* SplashScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A965F22C5238E00B54D72 /* SplashScreen.xib */; };
+		5A6A966822C53A0800B54D72 /* SobreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A966622C53A0800B54D72 /* SobreView.swift */; };
+		5A6A966922C53A0800B54D72 /* SobreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A966722C53A0800B54D72 /* SobreView.xib */; };
+		5A6A966B22C53C8400B54D72 /* labd2m.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A966A22C53C8400B54D72 /* labd2m.png */; };
+		5A6A966F22C53D7300B54D72 /* logo_sobre.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A966C22C53D7200B54D72 /* logo_sobre.png */; };
+		5A6A967022C53D7300B54D72 /* logo_ufv_com_inscricao.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A966D22C53D7200B54D72 /* logo_ufv_com_inscricao.png */; };
+		5A6A967122C53D7300B54D72 /* labd2m.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A966E22C53D7200B54D72 /* labd2m.png */; };
 		5A6B38332139AF00005FDF43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B38322139AF00005FDF43 /* AppDelegate.swift */; };
-		5A6B38352139AF00005FDF43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B38342139AF00005FDF43 /* ViewController.swift */; };
 		5A6B383D2139AF00005FDF43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6B383B2139AF00005FDF43 /* LaunchScreen.storyboard */; };
 		5A6B38482139AF00005FDF43 /* SiseventosUFViOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B38472139AF00005FDF43 /* SiseventosUFViOSTests.swift */; };
 		5A6B38532139AF00005FDF43 /* SiseventosUFViOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B38522139AF00005FDF43 /* SiseventosUFViOSUITests.swift */; };
@@ -32,6 +42,8 @@
 		5A6B386D2139C1DB005FDF43 /* Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B386C2139C1DB005FDF43 /* Local.swift */; };
 		5A6B386F2139C2E5005FDF43 /* Servico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B386E2139C2E5005FDF43 /* Servico.swift */; };
 		5A6B38712139C5BD005FDF43 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B38702139C5BD005FDF43 /* Usuario.swift */; };
+		5A76879922C92D5900448AF7 /* agenda.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A76879822C92D5900448AF7 /* agenda.png */; };
+		5A76879B22C9489C00448AF7 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 5A76879A22C9489C00448AF7 /* File */; };
 		5A7BA1FC215EAA4300C048AA /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7BA1FB215EAA4300C048AA /* menu.png */; };
 		5A7BA1FF215EAF4C00C048AA /* FiltrarCategoriasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BA1FD215EAF4C00C048AA /* FiltrarCategoriasView.swift */; };
 		5A7BA200215EAF4C00C048AA /* FiltrarCategoriasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7BA1FE215EAF4C00C048AA /* FiltrarCategoriasView.xib */; };
@@ -41,6 +53,9 @@
 		5A9FC7F52142DD780033C760 /* top_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FC7F42142DD780033C760 /* top_login.png */; };
 		5A9FC7F82142F38F0033C760 /* CadastrarUsuarioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9FC7F62142F38F0033C760 /* CadastrarUsuarioView.swift */; };
 		5A9FC7F92142F38F0033C760 /* CadastrarUsuarioView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FC7F72142F38F0033C760 /* CadastrarUsuarioView.xib */; };
+		5AA5A15822C5428C0056617C /* EditarPerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA5A15622C5428C0056617C /* EditarPerfilView.swift */; };
+		5AA5A15922C5428C0056617C /* EditarPerfilView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5A15722C5428C0056617C /* EditarPerfilView.xib */; };
+		5AB26C3922D7C80200DB82C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AB26C3822D7C80200DB82C4 /* GoogleService-Info.plist */; };
 		5ACA6BEF2157FB540028E358 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA6BED2157FB540028E358 /* MenuView.swift */; };
 		5ACA6BF02157FB540028E358 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA6BEE2157FB540028E358 /* MenuView.xib */; };
 		5ACA6BF5215802440028E358 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA6BF4215802440028E358 /* home.png */; };
@@ -51,6 +66,8 @@
 		5ACA6C0121582F2C0028E358 /* EventosRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA6C0021582F2C0028E358 /* EventosRequester.swift */; };
 		5ACA6C03215831F60028E358 /* EventosSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA6C02215831F60028E358 /* EventosSingleton.swift */; };
 		5ACA6C05215838AE0028E358 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA6C04215838AE0028E358 /* Extensions.swift */; };
+		5ADC39D321B06A30000B2FB1 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC39D221B06A30000B2FB1 /* MyNavigationController.swift */; };
+		5ADC39D521B06AF5000B2FB1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ADC39D421B06AF5000B2FB1 /* Images.xcassets */; };
 		5ADE8F2E2146E20400DD1795 /* Seguranca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE8F2D2146E20400DD1795 /* Seguranca.swift */; };
 		5ADE8F382146E88600DD1795 /* AuthModelRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE8F372146E88600DD1795 /* AuthModelRest.swift */; };
 		5ADF70082142DBE2002D61A3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF70062142DBE2002D61A3 /* LoginView.swift */; };
@@ -115,15 +132,25 @@
 		5A2D76FB217E2D9C009C7534 /* ProgramacaoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgramacaoCell.xib; sourceTree = "<group>"; };
 		5A2D76FD217E3BA6009C7534 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5A2E07D3214453F200D6F2E5 /* UsuarioRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioRequester.swift; sourceTree = "<group>"; };
+		5A3EA89F22CBD1D400759806 /* NotificacoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacoesView.swift; sourceTree = "<group>"; };
+		5A3EA8A022CBD1D400759806 /* NotificacoesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificacoesView.xib; sourceTree = "<group>"; };
 		5A412B36214ECCD500598DA8 /* Alerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerta.swift; sourceTree = "<group>"; };
 		5A412B38214ECEE000598DA8 /* UsuarioSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioSingleton.swift; sourceTree = "<group>"; };
 		5A412B3A214EDDC200598DA8 /* AppControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControl.swift; sourceTree = "<group>"; };
+		5A460B6922CA8CC600A7F506 /* DrawRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawRoute.swift; sourceTree = "<group>"; };
 		5A5C3F2E217CD94B00A92A8E /* expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expand.png; path = ../../../../../../Downloads/expand.png; sourceTree = "<group>"; };
 		5A5C3F30217CDDBE00A92A8E /* ampliar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ampliar.png; path = ../../../../../../Downloads/ampliar.png; sourceTree = "<group>"; };
 		5A5C3F32217CE77F00A92A8E /* reduce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reduce.png; path = ../../../../../../Downloads/reduce.png; sourceTree = "<group>"; };
+		5A6A965E22C5238E00B54D72 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		5A6A965F22C5238E00B54D72 /* SplashScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreen.xib; sourceTree = "<group>"; };
+		5A6A966622C53A0800B54D72 /* SobreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobreView.swift; sourceTree = "<group>"; };
+		5A6A966722C53A0800B54D72 /* SobreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SobreView.xib; sourceTree = "<group>"; };
+		5A6A966A22C53C8400B54D72 /* labd2m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = labd2m.png; path = ../../../../../../Downloads/labd2m.png; sourceTree = "<group>"; };
+		5A6A966C22C53D7200B54D72 /* logo_sobre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_sobre.png; sourceTree = "<group>"; };
+		5A6A966D22C53D7200B54D72 /* logo_ufv_com_inscricao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_ufv_com_inscricao.png; sourceTree = "<group>"; };
+		5A6A966E22C53D7200B54D72 /* labd2m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = labd2m.png; sourceTree = "<group>"; };
 		5A6B382F2139AF00005FDF43 /* SiseventosUFViOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiseventosUFViOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A6B38322139AF00005FDF43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A6B38342139AF00005FDF43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A6B383C2139AF00005FDF43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A6B383E2139AF00005FDF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A6B38432139AF00005FDF43 /* SiseventosUFViOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SiseventosUFViOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +167,8 @@
 		5A6B386C2139C1DB005FDF43 /* Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local.swift; sourceTree = "<group>"; };
 		5A6B386E2139C2E5005FDF43 /* Servico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servico.swift; sourceTree = "<group>"; };
 		5A6B38702139C5BD005FDF43 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		5A76879822C92D5900448AF7 /* agenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agenda.png; sourceTree = "<group>"; };
+		5A76879A22C9489C00448AF7 /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		5A7BA1FB215EAA4300C048AA /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = ../../../../../../Downloads/letras/menu.png; sourceTree = "<group>"; };
 		5A7BA1FD215EAF4C00C048AA /* FiltrarCategoriasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltrarCategoriasView.swift; sourceTree = "<group>"; };
 		5A7BA1FE215EAF4C00C048AA /* FiltrarCategoriasView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltrarCategoriasView.xib; sourceTree = "<group>"; };
@@ -149,6 +178,9 @@
 		5A9FC7F42142DD780033C760 /* top_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_login.png; sourceTree = "<group>"; };
 		5A9FC7F62142F38F0033C760 /* CadastrarUsuarioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarUsuarioView.swift; sourceTree = "<group>"; };
 		5A9FC7F72142F38F0033C760 /* CadastrarUsuarioView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastrarUsuarioView.xib; sourceTree = "<group>"; };
+		5AA5A15622C5428C0056617C /* EditarPerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilView.swift; sourceTree = "<group>"; };
+		5AA5A15722C5428C0056617C /* EditarPerfilView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditarPerfilView.xib; sourceTree = "<group>"; };
+		5AB26C3822D7C80200DB82C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5ACA6BED2157FB540028E358 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5ACA6BEE2157FB540028E358 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		5ACA6BF4215802440028E358 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -159,6 +191,8 @@
 		5ACA6C0021582F2C0028E358 /* EventosRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosRequester.swift; sourceTree = "<group>"; };
 		5ACA6C02215831F60028E358 /* EventosSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosSingleton.swift; sourceTree = "<group>"; };
 		5ACA6C04215838AE0028E358 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5ADC39D221B06A30000B2FB1 /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		5ADC39D421B06AF5000B2FB1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5ADE8F2D2146E20400DD1795 /* Seguranca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seguranca.swift; sourceTree = "<group>"; };
 		5ADE8F342146E4EE00DD1795 /* SiseventosUFViOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SiseventosUFViOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		5ADE8F372146E88600DD1795 /* AuthModelRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModelRest.swift; sourceTree = "<group>"; };
@@ -243,11 +277,24 @@
 			path = requester;
 			sourceTree = "<group>";
 		};
+		5A3EA8A722CBD7C200759806 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				5AE80EE521556B27002D9A6D /* EventoCell.swift */,
+				5AE80EE721556B38002D9A6D /* EventoCell.xib */,
+				5A7BA204215EB41E00C048AA /* CategoriaCell.swift */,
+				5A7BA202215EB35900C048AA /* CategoriaCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		5A412B35214ECCBE00598DA8 /* util */ = {
 			isa = PBXGroup;
 			children = (
 				5A412B36214ECCD500598DA8 /* Alerta.swift */,
 				5A2D76FD217E3BA6009C7534 /* Utilities.swift */,
+				5ADC39D221B06A30000B2FB1 /* MyNavigationController.swift */,
+				5A460B6922CA8CC600A7F506 /* DrawRoute.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -284,9 +331,10 @@
 				5A6B38632139BE03005FDF43 /* model */,
 				5ADE8F2C2146E1E900DD1795 /* util */,
 				5A6B38322139AF00005FDF43 /* AppDelegate.swift */,
-				5A6B38342139AF00005FDF43 /* ViewController.swift */,
 				5A6B383B2139AF00005FDF43 /* LaunchScreen.storyboard */,
 				5A6B383E2139AF00005FDF43 /* Info.plist */,
+				5AB26C3822D7C80200DB82C4 /* GoogleService-Info.plist */,
+				5ADC39D421B06AF5000B2FB1 /* Images.xcassets */,
 			);
 			path = SiseventosUFViOS;
 			sourceTree = "<group>";
@@ -341,14 +389,11 @@
 				5AE80EE121555F1C002D9A6D /* PrincipalView.xib */,
 				5A7BA1FD215EAF4C00C048AA /* FiltrarCategoriasView.swift */,
 				5A7BA1FE215EAF4C00C048AA /* FiltrarCategoriasView.xib */,
-				5AE80EE521556B27002D9A6D /* EventoCell.swift */,
-				5AE80EE721556B38002D9A6D /* EventoCell.xib */,
-				5A7BA204215EB41E00C048AA /* CategoriaCell.swift */,
-				5A7BA202215EB35900C048AA /* CategoriaCell.xib */,
 				5A16BFEA217B9BF300BB5DFB /* DetalhesEventoView.swift */,
 				5A16BFEB217B9BF300BB5DFB /* DetalhesEventoView.xib */,
 				5A2D76F9217E2D79009C7534 /* ProgramacaoCell.swift */,
 				5A2D76FB217E2D9C009C7534 /* ProgramacaoCell.xib */,
+				5A76879A22C9489C00448AF7 /* File */,
 			);
 			path = principal;
 			sourceTree = "<group>";
@@ -358,6 +403,12 @@
 			children = (
 				5ACA6BED2157FB540028E358 /* MenuView.swift */,
 				5ACA6BEE2157FB540028E358 /* MenuView.xib */,
+				5A6A966622C53A0800B54D72 /* SobreView.swift */,
+				5A6A966722C53A0800B54D72 /* SobreView.xib */,
+				5AA5A15622C5428C0056617C /* EditarPerfilView.swift */,
+				5AA5A15722C5428C0056617C /* EditarPerfilView.xib */,
+				5A3EA89F22CBD1D400759806 /* NotificacoesView.swift */,
+				5A3EA8A022CBD1D400759806 /* NotificacoesView.xib */,
 			);
 			path = menu;
 			sourceTree = "<group>";
@@ -365,10 +416,15 @@
 		5ACDD4FE2142DCA0005DE611 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				5A76879822C92D5900448AF7 /* agenda.png */,
 				5A5C3F30217CDDBE00A92A8E /* ampliar.png */,
 				5A5C3F32217CE77F00A92A8E /* reduce.png */,
+				5A6A966E22C53D7200B54D72 /* labd2m.png */,
+				5A6A966C22C53D7200B54D72 /* logo_sobre.png */,
+				5A6A966D22C53D7200B54D72 /* logo_ufv_com_inscricao.png */,
 				5A5C3F2E217CD94B00A92A8E /* expand.png */,
 				5A7BA1FB215EAA4300C048AA /* menu.png */,
+				5A6A966A22C53C8400B54D72 /* labd2m.png */,
 				5ACA6BFE215814230028E358 /* quit.png */,
 				5ACA6BF82158138A0028E358 /* editProfile.png */,
 				5ACA6BF4215802440028E358 /* home.png */,
@@ -398,6 +454,7 @@
 				5A7BA201215EB31C00C048AA /* principal */,
 				5ACA6BF32157FF120028E358 /* menu */,
 				5A412B35214ECCBE00598DA8 /* util */,
+				5A3EA8A722CBD7C200759806 /* cells */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -417,6 +474,8 @@
 				5ADF70072142DBE2002D61A3 /* LoginView.xib */,
 				5A9FC7F62142F38F0033C760 /* CadastrarUsuarioView.swift */,
 				5A9FC7F72142F38F0033C760 /* CadastrarUsuarioView.xib */,
+				5A6A965E22C5238E00B54D72 /* SplashScreen.swift */,
+				5A6A965F22C5238E00B54D72 /* SplashScreen.xib */,
 			);
 			path = inicio;
 			sourceTree = "<group>";
@@ -536,7 +595,7 @@
 					5A6B382E2139AF00005FDF43 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					5A6B38422139AF00005FDF43 = {
 						CreatedOnToolsVersion = 9.2;
@@ -584,7 +643,10 @@
 				5AE80F1821556D1B002D9A6D /* u.png in Resources */,
 				5AE80F1121556D1B002D9A6D /* n.png in Resources */,
 				5ACA6BF5215802440028E358 /* home.png in Resources */,
+				5A3EA8A222CBD1D400759806 /* NotificacoesView.xib in Resources */,
 				5AE80F1221556D1B002D9A6D /* o.png in Resources */,
+				5A6A967122C53D7300B54D72 /* labd2m.png in Resources */,
+				5AA5A15922C5428C0056617C /* EditarPerfilView.xib in Resources */,
 				5ACA6BFD215814020028E358 /* about.png in Resources */,
 				5AE80F0D21556D1B002D9A6D /* j.png in Resources */,
 				5A9FC7F92142F38F0033C760 /* CadastrarUsuarioView.xib in Resources */,
@@ -593,15 +655,19 @@
 				5AE80F1721556D1B002D9A6D /* t.png in Resources */,
 				5A5C3F2F217CD94B00A92A8E /* expand.png in Resources */,
 				5AE80F1921556D1B002D9A6D /* v.png in Resources */,
+				5A6A966B22C53C8400B54D72 /* labd2m.png in Resources */,
 				5AE80F0721556D1B002D9A6D /* d.png in Resources */,
 				5AE80F1B21556D1B002D9A6D /* x.png in Resources */,
+				5A6A966922C53A0800B54D72 /* SobreView.xib in Resources */,
 				5ACA6BF92158138A0028E358 /* editProfile.png in Resources */,
 				5AE80F1421556D1B002D9A6D /* q.png in Resources */,
 				5AE80F0521556D1B002D9A6D /* b.png in Resources */,
 				5AE80F1A21556D1B002D9A6D /* w.png in Resources */,
 				5AE80F0621556D1B002D9A6D /* c.png in Resources */,
+				5ADC39D521B06AF5000B2FB1 /* Images.xcassets in Resources */,
 				5A5C3F31217CDDBF00A92A8E /* ampliar.png in Resources */,
 				5AE80F0921556D1B002D9A6D /* f.png in Resources */,
+				5AB26C3922D7C80200DB82C4 /* GoogleService-Info.plist in Resources */,
 				5AE80F1D21556D1B002D9A6D /* z.png in Resources */,
 				5A16BFED217B9BF300BB5DFB /* DetalhesEventoView.xib in Resources */,
 				5AE80F0E21556D1B002D9A6D /* k.png in Resources */,
@@ -614,10 +680,15 @@
 				5AE80F0F21556D1B002D9A6D /* l.png in Resources */,
 				5AE80F1021556D1B002D9A6D /* m.png in Resources */,
 				5AE80F1521556D1B002D9A6D /* r.png in Resources */,
+				5A76879B22C9489C00448AF7 /* File in Resources */,
+				5A6A967022C53D7300B54D72 /* logo_ufv_com_inscricao.png in Resources */,
 				5AE80F0B21556D1B002D9A6D /* h.png in Resources */,
+				5A6A966F22C53D7300B54D72 /* logo_sobre.png in Resources */,
 				5ADF70092142DBE2002D61A3 /* LoginView.xib in Resources */,
 				5AE80F1C21556D1B002D9A6D /* y.png in Resources */,
 				5A7BA203215EB35900C048AA /* CategoriaCell.xib in Resources */,
+				5A6A966122C5238E00B54D72 /* SplashScreen.xib in Resources */,
+				5A76879922C92D5900448AF7 /* agenda.png in Resources */,
 				5AE80F0C21556D1B002D9A6D /* i.png in Resources */,
 				5AE80EE821556B38002D9A6D /* EventoCell.xib in Resources */,
 				5A9FC7F52142DD780033C760 /* top_login.png in Resources */,
@@ -653,7 +724,8 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -669,15 +741,21 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SiseventosUFViOS/Pods-SiseventosUFViOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AKMaskField/AKMaskField.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AKMaskField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -710,15 +788,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ACA6C05215838AE0028E358 /* Extensions.swift in Sources */,
+				5AA5A15822C5428C0056617C /* EditarPerfilView.swift in Sources */,
 				5A412B39214ECEE000598DA8 /* UsuarioSingleton.swift in Sources */,
 				5A412B37214ECCD500598DA8 /* Alerta.swift in Sources */,
-				5A6B38352139AF00005FDF43 /* ViewController.swift in Sources */,
 				5ACA6C0121582F2C0028E358 /* EventosRequester.swift in Sources */,
 				5A6B386D2139C1DB005FDF43 /* Local.swift in Sources */,
 				5A6B38652139BE6E005FDF43 /* Categoria.swift in Sources */,
 				5A6B38622139B0F8005FDF43 /* API.swift in Sources */,
 				5A2D76FA217E2D79009C7534 /* ProgramacaoCell.swift in Sources */,
 				5AE80EE221555F1C002D9A6D /* PrincipalView.swift in Sources */,
+				5A460B6A22CA8CC600A7F506 /* DrawRoute.swift in Sources */,
 				5A7BA205215EB41E00C048AA /* CategoriaCell.swift in Sources */,
 				5ACA6BEF2157FB540028E358 /* MenuView.swift in Sources */,
 				5A6B38332139AF00005FDF43 /* AppDelegate.swift in Sources */,
@@ -726,12 +805,16 @@
 				5A7BA207215EB72800C048AA /* CategoriaRequester.swift in Sources */,
 				5ADE8F382146E88600DD1795 /* AuthModelRest.swift in Sources */,
 				5A6B386F2139C2E5005FDF43 /* Servico.swift in Sources */,
+				5A3EA8A122CBD1D400759806 /* NotificacoesView.swift in Sources */,
+				5A6A966822C53A0800B54D72 /* SobreView.swift in Sources */,
 				5ADF70082142DBE2002D61A3 /* LoginView.swift in Sources */,
 				5A2D76FE217E3BA6009C7534 /* Utilities.swift in Sources */,
 				5A6B38692139BFEF005FDF43 /* Programacao.swift in Sources */,
 				5A6B386B2139C1A5005FDF43 /* Evento.swift in Sources */,
 				5A412B3B214EDDC200598DA8 /* AppControl.swift in Sources */,
 				5A9FC7F82142F38F0033C760 /* CadastrarUsuarioView.swift in Sources */,
+				5ADC39D321B06A30000B2FB1 /* MyNavigationController.swift in Sources */,
+				5A6A966022C5238E00B54D72 /* SplashScreen.swift in Sources */,
 				5AE80EE621556B27002D9A6D /* EventoCell.swift in Sources */,
 				5A6B38712139C5BD005FDF43 /* Usuario.swift in Sources */,
 				5ACA6C03215831F60028E358 /* EventosSingleton.swift in Sources */,
@@ -898,11 +981,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Universidade Federal de Vicosa (7S2H235A78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7S2H235A78;
+				"DEVELOPMENT_TEAM[sdk=*]" = PY2V38DX57;
 				INFOPLIST_FILE = SiseventosUFViOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.fabiomartins.SiseventosUFViOS;
+				PRODUCT_BUNDLE_IDENTIFIER = br.labd2m.UFVEventosIOS2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "122b79bb-1ab8-42a0-b3e9-10fe615f1f33";
+				PROVISIONING_PROFILE_SPECIFIER = siseventosUFVDebug;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SiseventosUFViOS/util/SiseventosUFViOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -916,11 +1006,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Universidade Federal de Vicosa (7S2H235A78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SiseventosUFViOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.fabiomartins.SiseventosUFViOS;
+				PRODUCT_BUNDLE_IDENTIFIER = br.labd2m.UFVEventosIOS2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SiseventosUFViOS/util/SiseventosUFViOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

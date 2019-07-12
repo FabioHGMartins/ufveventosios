@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -59,7 +58,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2E-GB-ydv">
                     <rect key="frame" x="0.0" y="160" width="240" height="507"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRQ-Tc-6v8">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRQ-Tc-6v8">
                             <rect key="frame" x="58" y="20" width="174" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="VXr-PP-euq"/>
@@ -67,6 +66,9 @@
                             <state key="normal" title="Início">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="inicio" destination="-1" eventType="touchDown" id="fG9-fS-tcH"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfE-Ru-9Jd">
                             <rect key="frame" x="58" y="70" width="174" height="30"/>
@@ -76,6 +78,9 @@
                             <state key="normal" title="Editar perfil">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="editarPerfil" destination="-1" eventType="touchDown" id="Y8R-dn-Qa1"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkJ-db-fDE">
                             <rect key="frame" x="58" y="120" width="174" height="30"/>
@@ -85,6 +90,9 @@
                             <state key="normal" title="Notificações">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="notificacoes" destination="-1" eventType="touchDown" id="Mcw-Wk-0JV"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LT9-09-QbF">
                             <rect key="frame" x="58" y="170" width="174" height="30"/>
@@ -94,6 +102,21 @@
                             <state key="normal" title="Sobre">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="sobre" destination="-1" eventType="touchDown" id="SWJ-Ej-Mx1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxF-aa-ahr">
+                            <rect key="frame" x="58" y="220" width="174" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="0lA-yy-ivY"/>
+                            </constraints>
+                            <state key="normal" title="Sair">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="sair" destination="-1" eventType="touchDown" id="5Gh-gQ-dD9"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.png" translatesAutoresizingMaskIntoConstraints="NO" id="4U0-hf-cMc">
                             <rect key="frame" x="8" y="20" width="30" height="30"/>
@@ -130,15 +153,6 @@
                                 <constraint firstAttribute="width" constant="30" id="cSV-sw-Snn"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxF-aa-ahr">
-                            <rect key="frame" x="58" y="220" width="174" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="0lA-yy-ivY"/>
-                            </constraints>
-                            <state key="normal" title="Sair">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>

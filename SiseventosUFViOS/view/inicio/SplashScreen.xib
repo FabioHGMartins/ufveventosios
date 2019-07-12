@@ -1,12 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreen" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreen" customModule="SiseventosUFViOS" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -15,8 +20,37 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_sobre.png" translatesAutoresizingMaskIntoConstraints="NO" id="biO-m7-h1y">
+                    <rect key="frame" x="50" y="83.5" width="275" height="220"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="biO-m7-h1y" secondAttribute="height" multiplier="5:4" id="PiL-jI-oOl"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_ufv_com_inscricao.png" translatesAutoresizingMaskIntoConstraints="NO" id="P1h-7t-owr">
+                    <rect key="frame" x="70" y="363.5" width="235" height="170"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="P1h-7t-owr" secondAttribute="height" multiplier="18:13" id="M9E-RW-aCm"/>
+                    </constraints>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="P1h-7t-owr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="70" id="0Dn-P5-KWe"/>
+                <constraint firstAttribute="trailing" secondItem="P1h-7t-owr" secondAttribute="trailing" constant="70" id="3DM-pC-pQw"/>
+                <constraint firstItem="biO-m7-h1y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9Fv-xd-O7K"/>
+                <constraint firstAttribute="centerY" secondItem="biO-m7-h1y" secondAttribute="bottom" constant="30" id="MUp-uZ-PQm"/>
+                <constraint firstItem="biO-m7-h1y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="tjg-sH-aSF"/>
+                <constraint firstItem="P1h-7t-owr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="30" id="wL9-8u-2tC"/>
+                <constraint firstAttribute="trailing" secondItem="biO-m7-h1y" secondAttribute="trailing" constant="50" id="x7p-f0-5p3"/>
+                <constraint firstItem="P1h-7t-owr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zvE-Gf-9s1"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="logo_sobre.png" width="558" height="504"/>
+        <image name="logo_ufv_com_inscricao.png" width="400" height="300"/>
+    </resources>
 </document>

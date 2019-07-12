@@ -13,23 +13,14 @@ class SplashScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.splashTimeOut(sender:)), userInfo: nil, repeats: false)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc func splashTimeOut(sender : Timer){
+        let loginView = LoginView(nibName: "LoginView", bundle: nil)
+        let nav = MyNavigationController()
+        nav.pushViewController(loginView, animated: false)
+        AppDelegate.sharedInstance().window?.rootViewController = nav
     }
-    */
 
 }

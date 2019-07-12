@@ -19,20 +19,20 @@ class UsuarioRequester {
         self.postUsuarioAuth(user: user, senha: senha, callbackSuccess: { (responseObject) in
             if let usuario = responseObject {
                 UsuarioSingleton.shared.usuario = usuario
-                print(UsuarioSingleton.shared.usuario)
                 AppControl.preferences.set(true, forKey: "logado")
-                AppControl.preferences.set(usuario.id, forKey: "id")
-                AppControl.preferences.set(usuario.nome, forKey: "nome")
                 AppControl.preferences.set(usuario.email, forKey: "email")
-                AppControl.preferences.set(usuario.senha, forKey: "senha")
-                AppControl.preferences.set(usuario.matricula, forKey: "matricula")
-                AppControl.preferences.set(usuario.nascimento, forKey: "nascimento")
-                AppControl.preferences.set(usuario.sexo, forKey: "sexo")
-                AppControl.preferences.set(usuario.googleId, forKey: "googleId")
-                AppControl.preferences.set(usuario.foto, forKey: "foto")
+                AppControl.preferences.set(senha, forKey: "senha")
                 
                 let categoriasRequester = CategoriaRequester()
                 categoriasRequester.getPreferenciasCategoria(idUsuario: usuario.id) { (ready,success) in
+                    if (ready) {
+                        if (success) {
+                            
+                        }
+                    }
+                }
+                
+                categoriasRequester.getPreferenciasNotificacoes(idUsuario: usuario.id) { (ready,success) in
                     if (ready) {
                         if (success) {
                             
@@ -64,6 +64,35 @@ class UsuarioRequester {
             handleFinish((ready: true,success: false))
         })
     }
+    
+    func atualizarUsuario(usuario: Usuario, att: Bool, usuarioAtual: String, senhaAtual: String, handleFinish:@escaping ((ready: Bool, success:Bool))->()){
+        if (att) {
+            self.postUsuarioAuth(user: usuarioAtual, senha: senhaAtual, callbackSuccess: { (responseObject) in
+                if let usuario = responseObject {
+                    handleFinish((ready: true, success: true))
+                } else {
+                    Alerta.alerta("Credenciais inválidas", msg: "Por favor insira uma combinação válida para o usuário e senha atuais.", view: self.view!)
+                    handleFinish((ready: true, success: false))
+                }
+            }, callbackFailure: { (error) in
+                Alerta.alerta("Erro da rede", msg: "Aconteceu um erro inesperado na rede. Por favor, tente novamente.", view: self.view!)
+                handleFinish((ready: true, success: false))
+            })
+        }
+        self.putUsuario(usuario: usuario, callbackSuccess: { () in
+            AppControl.preferences.set(true, forKey: "logado")
+            AppControl.preferences.set(usuario.email, forKey: "email")
+            AppControl.preferences.set(usuario.senha, forKey: "senha")
+            UsuarioSingleton.shared.usuario = usuario
+            UsuarioSingleton.shared.usuario?.senha = Seguranca.duploMD5(usuario.senha)
+            print(UsuarioSingleton.shared.usuario)
+        }, callbackFailure: {
+            Alerta.alerta("Erro de conexão", msg: "Aconteceu algo inesperado na conexão, tente novamente.", view: self.view!)
+            handleFinish((ready: true,success: false))
+        })
+    }
+    
+    
     
     func postUsuarioAuth(user: String, senha: String, callbackSuccess: @escaping ((_ responseObject: Usuario?)->()), callbackFailure: @escaping ((_ error: Usuario)->())){
         let jsonObj : JSON = ["usuario": user,"senha": Seguranca.duploMD5(senha)]
@@ -103,6 +132,24 @@ class UsuarioRequester {
             }
         }){ (error) in
             print("Error postUsuario \(error)")
+        }
+    }
+    
+    
+    
+    func putUsuario(usuario: Usuario, callbackSuccess: @escaping (()->()), callbackFailure: @escaping (()->())){
+        let jsonObj: JSON = ["nome": usuario.nome,
+                             "email": usuario.email,
+                             "senha": Seguranca.duploMD5(usuario.senha),
+                             "sexo": usuario.sexo, // ajustar
+                             "nascimento": usuario.nascimento]
+        let parameters = ["data": jsonObj]
+        
+        Endpoints.shared.makeRequest(apiUrl: Endpoints.shared.updateUsuario(usuario.id), method: .put, parameters: parameters, callbackSuccess: {(info:Data?) in
+            callbackSuccess()
+        }){ (error) in
+            print("Error putUsuario")
+            callbackFailure()
         }
     }
     

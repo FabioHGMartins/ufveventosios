@@ -30,6 +30,10 @@ final class Endpoints {
     
     // GET
     
+    func dispositivos(_ idUsuario: String) -> String {
+        return "dispositivos/\(idUsuario)"
+    }
+    
     func eventosPorUsuario (_ idUsuario: String, _ offset: Int, _ limit: Int) -> String {
         return "evento/categoria/personalizado/idusuario/\(idUsuario)/indexinicial/\(offset)/indexfinal/\(limit)"
     }
@@ -62,11 +66,13 @@ final class Endpoints {
     let addAgenda = "calendar"
     let deleteAgenda = "deletecalendar"
     let preferenciasCategorias = "preferencias_categorias"
+    let preferenciasNotificacoes = "preferencias_notificacoes"
+    let dispositivos = "dispositivos"
     
     // PUT
     
     func updateUsuario(_ idUsuario: String) -> String {
-        return "usuario/{idUsuario}"
+        return "usuario/\(idUsuario)"
     }
     
     func updateNotificacoes() -> String {
@@ -77,12 +83,12 @@ final class Endpoints {
         return "agenda"
     }
     
-    func updatePreferenciasDeNotificacoes (_ idUsuario: String) -> String {
-        return "preferencias_notificacoes/\(idUsuario)"
-    }
-    
     func updatePreferenciasDeCategorias (_ idUsuario: String) -> String {
         return "preferencias_categorias/\(idUsuario)"
+    }
+    
+    func updatePreferenciasDeNotificacoes (_ idUsuario: String) -> String {
+        return "preferencias_notificacoes/\(idUsuario)"
     }
     
     

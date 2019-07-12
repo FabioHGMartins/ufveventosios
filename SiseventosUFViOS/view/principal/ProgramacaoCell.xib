@@ -91,12 +91,5 @@
             </connections>
             <point key="canvasLocation" x="24.5" y="86"/>
         </tableViewCell>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J3j-Ix-22v">
-            <rect key="frame" x="0.0" y="0.0" width="49" height="21"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-            <nil key="highlightedColor"/>
-        </label>
     </objects>
 </document>

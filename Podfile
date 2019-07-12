@@ -9,4 +9,6 @@ target 'SiseventosUFViOS' do
  pod 'KYDrawerController'
  pod 'GoogleMaps'
  pod 'GooglePlaces'
+ pod 'Firebase/Core'  
+ pod 'Firebase/Messaging'
 end

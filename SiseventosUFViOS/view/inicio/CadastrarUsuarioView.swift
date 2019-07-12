@@ -10,7 +10,7 @@ import UIKit
 import AKMaskField
 import KYDrawerController
 
-class CadastrarUsuarioView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CadastrarUsuarioView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet var loginBt:UIButton?
     @IBOutlet var voltarBt:UIBarButtonItem?
@@ -37,6 +37,7 @@ class CadastrarUsuarioView: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         self.title = "Cadastrar"
         
         self.sexoPicker?.delegate = self
@@ -88,7 +89,7 @@ class CadastrarUsuarioView: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func recuperaNasc() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         let dateString = dateFormatter.string(from: dataNascPicker!.date)
         return dateString
     }
@@ -130,6 +131,23 @@ class CadastrarUsuarioView: UIViewController, UIPickerViewDelegate, UIPickerView
         return l
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if(textField == nomeTf) {
+            emailTf?.becomeFirstResponder()
+            return true
+        } else if(textField == emailTf) {
+            senhaTf?.becomeFirstResponder()
+            return true
+        } else if(textField == senhaTf) {
+            confirmarSenhaTf?.becomeFirstResponder()
+            return true
+        } else if(textField == confirmarSenhaTf) {
+            confirmarSenhaTf?.resignFirstResponder()
+            return true
+        }
+        return false
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

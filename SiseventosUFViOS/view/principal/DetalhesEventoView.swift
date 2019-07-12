@@ -8,31 +8,45 @@
 
 import UIKit
 import GoogleMaps
+import MapKit
+import CoreLocation
 
-class DetalhesEventoView: UIViewController {
+
+class DetalhesEventoView: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet fileprivate weak var mapView: GMSMapView!
     @IBOutlet var expandButton:UIButton!
-    
+    @IBOutlet var agendaButton:UIButton!
+    @IBOutlet var scrollView:UIScrollView!
+    @IBOutlet var eventTitleView:UIView!
     @IBOutlet var contentView:UIView!
+    
     @IBOutlet var tituloEventoLb:UILabel!
     @IBOutlet var dataEventoLb:UILabel!
     @IBOutlet var horarioEventoLb:UILabel!
     @IBOutlet var localEventoLb:UILabel!
     @IBOutlet var taxaInscricaoEventoLb:UILabel!
     @IBOutlet var localInscricaoEventoLb:UILabel!
+    @IBOutlet var localInscricaoEventoTitleLb:UILabel!
     @IBOutlet var participantesEventoLb:UILabel!
+    @IBOutlet var participantesEventoTitleLb:UILabel!
     @IBOutlet var publicoAlvoEventoLb:UILabel!
+    @IBOutlet var publicoAlvoEventoTitleLb:UILabel!
     @IBOutlet var categoriaEventoLb:UILabel!
+    @IBOutlet var categoriaEventoTitleLb:UILabel!
     
     @IBOutlet var programacaoContentView:UIView!
     @IBOutlet var programacaoFixedLb:UIView!
+    @IBOutlet var descricaoFixedLb:UILabel!
     @IBOutlet var descricaoEventoLb:UILabel!
     @IBOutlet var programacaoTableView:UITableView!
     
     
     var evento:Evento!
-    var fechado = true
+    var fechado = false
+    let locationManager = CLLocationManager()
+    var userLocation:CLLocationCoordinate2D?
+    var markerUser = GMSMarker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +55,32 @@ class DetalhesEventoView: UIViewController {
         let xib = UINib(nibName: "ProgramacaoCell", bundle: nil)
         self.programacaoTableView.register(xib, forCellReuseIdentifier: "cell")
         
-        loadCamera()
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            self.locationManager.delegate = self
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            self.locationManager.startUpdatingLocation()
+            print("ServicesEnabled")
+        }
+        
+        scrollView.layoutIfNeeded()
+        scrollView.isScrollEnabled = true
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: scrollView.frame.size.height)
+        showContent()
         loadInfoEvento()
-        contentView.isHidden = true
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else {
+            return
+        }
+        userLocation = locValue
+        loadCamera()
+        
+        
     }
     
     func loadInfoEvento() {
@@ -66,34 +103,41 @@ class DetalhesEventoView: UIViewController {
         }
         
         if(evento.locais.isEmpty) {
-            localEventoLb.isHidden=true
+            localEventoLb.removeFromSuperview()
         } else {
-            var aux = evento.locais[0].descricao
+            var aux = ""
             for local in evento.locais {
-                aux += "\(local.descricao),"
+                aux += " \(local.descricao),"
             }
+            aux.removeFirst()
             aux.removeLast()
             localEventoLb.text = aux
         }
         
         if(evento.teminscricao == "0") {
             taxaInscricaoEventoLb.text = "Não é necessário realizar inscrição"
+            localInscricaoEventoLb.removeFromSuperview()
+            localInscricaoEventoTitleLb.removeFromSuperview()
         } else if (evento.teminscricao == "1")  {
             taxaInscricaoEventoLb.text = "Gratuito"
             localInscricaoEventoLb.text = evento.linklocalinscricao
-            localInscricaoEventoLb.isHidden = false
         } else {
             taxaInscricaoEventoLb.text = "R$\(evento.valorinscricao)"
+            localInscricaoEventoLb.text = evento.linklocalinscricao
         }
         
-        if(evento.mostrarparticipantes == "1") {
+        if(evento.mostrarparticipantes == "0") {
             participantesEventoLb.text = evento.participantes
-            participantesEventoLb.isHidden = false
+        }else {
+            participantesEventoLb.removeFromSuperview()
+            participantesEventoTitleLb.removeFromSuperview()
         }
         
         if(evento.publico != nil && evento.publico != "") {
             publicoAlvoEventoLb.text = evento.publico
-            publicoAlvoEventoLb.isHidden = false
+        } else {
+            publicoAlvoEventoLb.removeFromSuperview()
+            publicoAlvoEventoTitleLb.removeFromSuperview()
         }
         
         if(evento.categorias.count > 0) {
@@ -102,39 +146,58 @@ class DetalhesEventoView: UIViewController {
                 aux += ", \(evento.categorias[i].nome)"
             }
             categoriaEventoLb.text = aux
+        } else {
+            categoriaEventoLb.removeFromSuperview()
+            categoriaEventoTitleLb.removeFromSuperview()
         }
         
         if(evento.descricao_evento != "" && evento.descricao_evento != nil) {
             descricaoEventoLb.text = evento.descricao_evento
         }
         else {
-            descricaoEventoLb.isHidden = true
+            descricaoEventoLb.removeFromSuperview()
+            descricaoFixedLb.removeFromSuperview()
         }
         
         if(evento.programacoes.count == 0) {
-            programacaoFixedLb.isHidden = true
-            programacaoTableView.isHidden = true
+            programacaoFixedLb.removeFromSuperview()
+            programacaoTableView.removeFromSuperview()
         }
         
         if(descricaoEventoLb.isHidden && programacaoFixedLb.isHidden) {
-            programacaoContentView.isHidden = true
+            programacaoContentView.removeFromSuperview()
         }
         
     }
     
     @IBAction func showContent() {
         if(fechado) {
-            expandButton.setImage(UIImage(contentsOfFile: "reduce.png"), for: UIControlState.normal)
+            expandButton.setBackgroundImage(UIImage(named: "reduce.png"), for: UIControlState.normal)
             contentView.isHidden = false
         } else {
-            expandButton.setImage(UIImage(contentsOfFile: "expand.png"), for: UIControlState.normal)
+            expandButton.setBackgroundImage(UIImage(named: "expand.png"), for: UIControlState.normal)
             contentView.isHidden = true
         }
         fechado = !fechado
     }
     
+    @IBAction func agendarEvento() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date1 = dateFormatter.date(from: (evento.datainicio + " " + evento.horainicio))
+        let date2 = dateFormatter.date(from: (evento.datafim + " " + evento.horafim))
+        addEventToCalendar(title: evento.denominacao, description: evento.descricao_evento, startDate: date1!, endDate: date2!) { (success, error) in
+            if success {
+                Alerta.alerta("Evento agendado com sucesso!", msg: "", view: self)
+            } else {
+                Alerta.alerta("Ocorreu algo inesperado...", msg: "Por favor, tente novamente", view: self)
+            }
+        }
+    }
+    
     func loadCamera() {
         let path = GMSMutablePath()
+        path.add(userLocation!)
         
         for local in evento.locais {
             let position = CLLocationCoordinate2DMake(Double(local.lat)!, Double(local.lng)!)
@@ -153,6 +216,63 @@ class DetalhesEventoView: UIViewController {
             marker.title = local.descricao
             marker.snippet = local.descricao
             marker.map = mapView
+            
+            self.fetchRoute(from: userLocation!, to: posicao)
+        }
+        
+        let posicao = CLLocationCoordinate2D(latitude: Double((userLocation?.latitude)!), longitude: Double((userLocation?.longitude)!))
+        markerUser.position = posicao
+        markerUser.title = "Você"
+        markerUser.map = mapView
+    }
+    
+    func fetchRoute(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
+        
+        let session = URLSession.shared
+        
+        let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=\(source.latitude),\(source.longitude)&destination=\(destination.latitude),\(destination.longitude)&sensor=false&mode=driving&key=AIzaSyC2vzuwOgPqc-bKKZZ_OykqsTYx6qRTTe8")!
+        
+        let task = session.dataTask(with: url, completionHandler: {
+            (data, response, error) in
+            
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            guard let jsonResult = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any], let jsonResponse = jsonResult else {
+                print("error in JSONSerialization")
+                return
+            }
+            
+            guard let routes = jsonResponse["routes"] as? [Any] else {
+                return
+            }
+            
+            guard let route = routes[0] as? [String: Any] else {
+                return
+            }
+            
+            guard let overview_polyline = route["overview_polyline"] as? [String: Any] else {
+                return
+            }
+            
+            guard let polyLineString = overview_polyline["points"] as? String else {
+                return
+            }
+            
+            //Call this method to draw path on map
+            self.drawPath(from: polyLineString)
+        })
+        task.resume()
+    }
+    
+    func drawPath(from polyStr: String){
+        DispatchQueue.main.async {
+            let path = GMSPath(fromEncodedPath: polyStr)
+            let polyline = GMSPolyline.init(path: path)
+            polyline.strokeWidth = 3.0
+            polyline.map = self.mapView // Google MapView
         }
     }
 
@@ -172,8 +292,8 @@ extension DetalhesEventoView: UITableViewDataSource {
         let dataFimString = formatarData(valor: programacao.datafimprog, formatoAtual: "yyyy-MM-dd", formatoNovo: "dd/MM/yyyy")
         cell.dataLb?.text = "\(dataInicioString) até \(dataFimString)"
         
-        let horaInicioString = formatarData(valor: programacao.horainicioprog, formatoAtual: "yyyy-MM-dd", formatoNovo: "dd/MM/yyyy")
-        let horaFimString = formatarData(valor: programacao.horafimprog, formatoAtual: "yyyy-MM-dd", formatoNovo: "dd/MM/yyyy")
+        let horaInicioString = formatarData(valor: programacao.horainicioprog, formatoAtual: "HH:mm:ss", formatoNovo: "HH:mm")
+        let horaFimString = formatarData(valor: programacao.horafimprog, formatoAtual: "HH:mm:ss", formatoNovo: "HH:mm")
         cell.horarioLb?.text = "\(horaInicioString) até \(horaFimString)"
         
         if(programacao.descricaoprog != "") {

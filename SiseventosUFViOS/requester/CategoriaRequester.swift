@@ -51,6 +51,25 @@ class CategoriaRequester {
         }
     }
     
+    func getPreferenciasNotificacoes(idUsuario:String,handlerFinish: @escaping ((_ ready:Bool, _ success:Bool)->())){
+        let parameters = ["": ""]
+        
+        Endpoints.shared.makeRequest(apiUrl: Endpoints.shared.getPreferenciasDeNotificacoes(idUsuario), method: .get, parameters: parameters, callbackSuccess: {(info:Data?) in
+            var categorias: Array<Categoria>?
+            if let responseData =  info{
+                let decoder = JSONDecoder()
+                categorias = try? decoder.decode(Array<Categoria>.self, from: responseData)
+            }
+            UsuarioSingleton.shared.categoriasNotf = categorias!
+            
+            handlerFinish(true,true)
+        }){ (error) in
+            print("Error getPreferenciasNotificacoes")
+            handlerFinish(true,false)
+            
+        }
+    }
+    
     func postPreferenciasCategorias(idUsuario:String, idCategorias: Array<String>, handlerFinish: @escaping ((_ ready:Bool, _ success:Bool)->())){
         let jsonObj : JSON = ["usuario": idUsuario, "categorias": idCategorias]
         let parameters = ["data": jsonObj]
@@ -63,6 +82,18 @@ class CategoriaRequester {
         }
     }
     
+    func postPreferenciasNotificacoes(idUsuario:String, idCategorias: Array<String>, handlerFinish: @escaping ((_ ready:Bool, _ success:Bool)->())){
+        let jsonObj : JSON = ["usuario": idUsuario, "categorias": idCategorias]
+        let parameters = ["data": jsonObj]
+        
+        Endpoints.shared.makeRequest(apiUrl: Endpoints.shared.preferenciasNotificacoes, method: .post, parameters: parameters, callbackSuccess: {(info:Data?) in
+            handlerFinish(true,true)
+        }){ (error) in
+            print("Error postPreferenciasNotificacoes")
+            handlerFinish(true,false)
+        }
+    }
+    
     func putPreferenciasCategorias(idUsuario:String, idCategorias: Array<String>, handlerFinish: @escaping ((_ ready:Bool, _ success:Bool)->())){
         let jsonObj : JSON = ["categorias": idCategorias]
         let parameters = ["data": jsonObj]
@@ -71,6 +102,18 @@ class CategoriaRequester {
             handlerFinish(true,true)
         }){ (error) in
             print("Error putPreferenciasCategorias")
+            handlerFinish(true,false)
+        }
+    }
+    
+    func putPreferenciasNotificacoes(idUsuario:String, idCategorias: Array<String>, handlerFinish: @escaping ((_ ready:Bool, _ success:Bool)->())){
+        let jsonObj : JSON = ["categorias": idCategorias]
+        let parameters = ["data": jsonObj]
+        
+        Endpoints.shared.makeRequest(apiUrl: Endpoints.shared.updatePreferenciasDeNotificacoes(idUsuario), method: .put, parameters: parameters, callbackSuccess: {(info:Data?) in
+            handlerFinish(true,true)
+        }){ (error) in
+            print("Error putPreferenciasNotificacoes")
             handlerFinish(true,false)
         }
     }

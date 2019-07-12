@@ -14,6 +14,7 @@ final class UsuarioSingleton {
 
     var usuario: Usuario?
     var categoriasPref: Array<Categoria>? = Array<Categoria>()
+    var categoriasNotf: Array<Categoria>? = Array<Categoria>()
     var categoriasUpdate: Bool = true
     
     var token : String?

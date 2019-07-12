@@ -35,7 +35,7 @@ class MenuView: UIViewController {
         }
     }
     
-    func inicio() {
+    @IBAction func inicio() {
         if let drawerController = parent as? KYDrawerController {
             let principalView = PrincipalView()
             (drawerController.mainViewController as! UINavigationController).pushViewController(principalView, animated: true)
@@ -43,20 +43,37 @@ class MenuView: UIViewController {
         }
     }
     
-    func editarPerfil() {
-        
+    @IBAction func editarPerfil() {
+        if let drawerController = parent as? KYDrawerController {
+            let editarPerfilView = EditarPerfilView()
+            (drawerController.mainViewController as! UINavigationController).pushViewController(editarPerfilView, animated: true)
+            drawerController.setDrawerState(.closed, animated: true)
+        }
     }
     
-    func notificacoes() {
+    @IBAction func notificacoes() {
+        if let drawerController = parent as? KYDrawerController {
+            let notificacoesView = NotificacoesView()
+            (drawerController.mainViewController as! UINavigationController).pushViewController(notificacoesView, animated: true)
+            drawerController.setDrawerState(.closed, animated: true)
+        }
     
     }
     
-    func sobre() {
-    
+    @IBAction func sobre() {
+        if let drawerController = parent as? KYDrawerController {
+            let sobreView = SobreView(nibName: "SobreView", bundle: nil)
+            (drawerController.mainViewController as! UINavigationController).pushViewController(sobreView, animated: true)
+            drawerController.setDrawerState(.closed, animated: true)
+        }
     }
     
-    func sair() {
-    
+    @IBAction func sair() {
+        let loginView = LoginView(nibName: "LoginView", bundle: nil)
+        AppControl.preferences.set(false, forKey: "logado")
+        AppControl.preferences.set(nil, forKey: "email")
+        AppControl.preferences.set(nil, forKey: "senha")
+        self.present(loginView, animated: true, completion: nil)
     }
 
 }
