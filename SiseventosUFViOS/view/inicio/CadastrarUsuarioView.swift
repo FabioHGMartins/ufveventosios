@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AKMaskField
 import KYDrawerController
 
 class CadastrarUsuarioView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {

@@ -8,8 +8,9 @@
 
 import UIKit
 import KYDrawerController
+import GoogleSignIn
 
-class LoginView: UIViewController, UITextFieldDelegate {
+class LoginView: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     
     @IBOutlet var loginBt:UIButton?
     @IBOutlet var cadastrarBt: UIButton?
@@ -34,7 +35,9 @@ class LoginView: UIViewController, UITextFieldDelegate {
         self.title = "Login"
         let voltarBt = UIBarButtonItem()
         voltarBt.title = "Voltar"
-        self.navigationItem.backBarButtonItem = voltarBt
+        self.navigationItem.backBarButtonItem = voltarBt        
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
         
         self.progress!.isHidden = true
         
@@ -45,6 +48,11 @@ class LoginView: UIViewController, UITextFieldDelegate {
     @IBAction func cadastrarUsuario() {
         let cadastrarView = CadastrarUsuarioView()
         self.navigationController?.pushViewController(cadastrarView, animated: true)
+    }
+    
+    @IBAction func esqueciMinhaSenha() {
+        let esqueciSenhaView = EsqueciSenhaView()
+        self.navigationController?.pushViewController(esqueciSenhaView, animated: true)        
     }
     
     @IBAction func login() {
@@ -109,23 +117,42 @@ class LoginView: UIViewController, UITextFieldDelegate {
             AppControl.preferences.set(false, forKey: "logado")
         } else if (AppControl.preferences.bool(forKey: "logado")){
             let email = AppControl.preferences.string(forKey: "email")
-            let senha = AppControl.preferences.string(forKey: "senha")
             self.progress!.isHidden = false
             self.progress!.startAnimating()
-            
-            requester.login(user: email!, senha: senha!) { (ready, success) in
-                if(ready) {
-                    self.progress!.stopAnimating()
-                    self.progress!.isHidden = true
-                    if (success) {
-                        let principalView = PrincipalView(nibName:"PrincipalView", bundle: nil)
-                        let menuView = MenuView(nibName:"MenuView", bundle: nil)
-                        let drawerKYController     = KYDrawerController(drawerDirection: .left, drawerWidth: 280)
-                        drawerKYController.mainViewController = UINavigationController(
-                            rootViewController: principalView
-                        )
-                        drawerKYController.drawerViewController = menuView
-                        self.present(drawerKYController, animated: true, completion: nil)
+            if let googleId = AppControl.preferences.string(forKey: "googleId") {
+                let nome = AppControl.preferences.string(forKey: "nome")
+                requester.loginComGoogle(nome: nome!, email: email!, googleId: googleId) { (ready, success) in
+                    if(ready) {
+                        self.progress!.stopAnimating()
+                        self.progress!.isHidden = true
+                        if (success) {
+                            let principalView = PrincipalView(nibName:"PrincipalView", bundle: nil)
+                            let menuView = MenuView(nibName:"MenuView", bundle: nil)
+                            let drawerKYController     = KYDrawerController(drawerDirection: .left, drawerWidth: 280)
+                            drawerKYController.mainViewController = UINavigationController(
+                                rootViewController: principalView
+                            )
+                            drawerKYController.drawerViewController = menuView
+                            self.present(drawerKYController, animated: true, completion: nil)
+                        }
+                    }
+                }
+            } else {
+                let senha = AppControl.preferences.string(forKey: "senha")
+                requester.login(user: email!, senha: senha!) { (ready, success) in
+                    if(ready) {
+                        self.progress!.stopAnimating()
+                        self.progress!.isHidden = true
+                        if (success) {
+                            let principalView = PrincipalView(nibName:"PrincipalView", bundle: nil)
+                            let menuView = MenuView(nibName:"MenuView", bundle: nil)
+                            let drawerKYController     = KYDrawerController(drawerDirection: .left, drawerWidth: 280)
+                            drawerKYController.mainViewController = UINavigationController(
+                                rootViewController: principalView
+                            )
+                            drawerKYController.drawerViewController = menuView
+                            self.present(drawerKYController, animated: true, completion: nil)
+                        }
                     }
                 }
             }

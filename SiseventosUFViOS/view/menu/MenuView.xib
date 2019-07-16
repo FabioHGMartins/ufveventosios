@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="editarPerfilBt" destination="tfE-Ru-9Jd" id="ss5-z1-agY"/>
                 <outlet property="inicioBt" destination="nRQ-Tc-6v8" id="AFR-s1-6Ch"/>
+                <outlet property="nomeUsuarioLb" destination="eIv-lk-dab" id="Tmc-Es-2ie"/>
                 <outlet property="notificacoesBt" destination="JkJ-db-fDE" id="MlP-dt-Wrw"/>
                 <outlet property="sairBt" destination="yxF-aa-ahr" id="giY-CO-nSB"/>
                 <outlet property="sobreBt" destination="LT9-09-QbF" id="InA-ds-5fN"/>

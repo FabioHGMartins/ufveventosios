@@ -8,9 +8,11 @@
 
 import UIKit
 import KYDrawerController
+import GoogleSignIn
 
 class MenuView: UIViewController {
     
+    @IBOutlet var nomeUsuarioLb: UILabel?
     @IBOutlet var inicioBt:UIButton?
     @IBOutlet var editarPerfilBt:UIButton?
     @IBOutlet var notificacoesBt:UIButton?
@@ -23,8 +25,8 @@ class MenuView: UIViewController {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
-
-
+        
+        nomeUsuarioLb?.text = UsuarioSingleton.shared.usuario?.nome
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
@@ -45,9 +47,13 @@ class MenuView: UIViewController {
     
     @IBAction func editarPerfil() {
         if let drawerController = parent as? KYDrawerController {
-            let editarPerfilView = EditarPerfilView()
-            (drawerController.mainViewController as! UINavigationController).pushViewController(editarPerfilView, animated: true)
-            drawerController.setDrawerState(.closed, animated: true)
+            if(UsuarioSingleton.shared.usuario?.googleId == "") {
+                let editarPerfilView = EditarPerfilView()
+                (drawerController.mainViewController as! UINavigationController).pushViewController(editarPerfilView, animated: true)
+                drawerController.setDrawerState(.closed, animated: true)
+            } else {
+                Alerta.alerta("Funcionalidade Indisponível", msg: "Essa funcionalidade está indisponível para usuário logados com conta Google", view: self)
+            }
         }
     }
     
@@ -72,7 +78,13 @@ class MenuView: UIViewController {
         let loginView = LoginView(nibName: "LoginView", bundle: nil)
         AppControl.preferences.set(false, forKey: "logado")
         AppControl.preferences.set(nil, forKey: "email")
-        AppControl.preferences.set(nil, forKey: "senha")
+        AppControl.preferences.set(nil, forKey: "nome")
+        if(UsuarioSingleton.shared.usuario?.googleId == nil) {
+            GIDSignIn.sharedInstance().signOut()
+            AppControl.preferences.set(nil, forKey: "googleId")
+        } else {
+            AppControl.preferences.set(nil, forKey: "senha")
+        }
         self.present(loginView, animated: true, completion: nil)
     }
 

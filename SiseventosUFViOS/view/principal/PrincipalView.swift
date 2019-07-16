@@ -48,6 +48,15 @@ class PrincipalView: UIViewController {
             action: #selector(abrirMenu)
         )
         
+        requester.getEventos(offset: offset, limit: limit) { (ready, success) in
+            if(ready) {
+                self.progress?.stopAnimating()
+                if (success) {
+                    self.tableView?.reloadData()
+                }
+            }
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

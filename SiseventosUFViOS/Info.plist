@@ -28,6 +28,14 @@
 				<string>fb260146667992115</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.953311697524-7ec4ku2ebd4u3kkgse1ss7rth25rump0</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -35,6 +43,8 @@
 	<string>260146667992115</string>
 	<key>FacebookDisplayName</key>
 	<string>SiseventosUFV</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

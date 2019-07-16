@@ -38,7 +38,7 @@ class NotificacoesView: UIViewController, UITableViewDelegate, UITableViewDataSo
                     self.cells = Array<CategoriaCell>()
                     self.tableView?.reloadData()
                 }
-                self.progress?.stopAnimating()
+                self.progress?.isHidden = true
             }
         }
         

@@ -71,7 +71,7 @@
                                 <action selector="salvar" destination="-1" eventType="touchDown" id="qW8-kK-Yk8"/>
                             </connections>
                         </button>
-                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0ud-hT-iVo">
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0ud-hT-iVo">
                             <rect key="frame" x="157" y="302" width="20" height="20"/>
                         </activityIndicatorView>
                     </subviews>

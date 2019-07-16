@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>224128381554-4up937mdcqf5ef365mjorv233m68iqes.apps.googleusercontent.com</string>
+	<string>224128381554-8910vv3le0r8q26thf7rqprggg6tt81k.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.224128381554-4up937mdcqf5ef365mjorv233m68iqes</string>
+	<string>com.googleusercontent.apps.224128381554-8910vv3le0r8q26thf7rqprggg6tt81k</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>224128381554-bufsf77ed7ch0aq1n0v1fe5fqjd35tfl.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>br.labd2m.UFVEventosIOS2</string>
+	<string>ufv.labd2m.ufveventos</string>
 	<key>PROJECT_ID</key>
 	<string>siseventos-1496000137667</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:224128381554:ios:17ae5541537f911f</string>
+	<string>1:224128381554:ios:e1aa6b4dab257560</string>
 	<key>DATABASE_URL</key>
 	<string>https://siseventos-1496000137667.firebaseio.com</string>
 </dict>
