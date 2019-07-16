@@ -28,7 +28,6 @@
 		5A6A966122C5238E00B54D72 /* SplashScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A965F22C5238E00B54D72 /* SplashScreen.xib */; };
 		5A6A966822C53A0800B54D72 /* SobreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A966622C53A0800B54D72 /* SobreView.swift */; };
 		5A6A966922C53A0800B54D72 /* SobreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A966722C53A0800B54D72 /* SobreView.xib */; };
-		5A6A966B22C53C8400B54D72 /* labd2m.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A966A22C53C8400B54D72 /* labd2m.png */; };
 		5A6A966F22C53D7300B54D72 /* logo_sobre.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A966C22C53D7200B54D72 /* logo_sobre.png */; };
 		5A6A967022C53D7300B54D72 /* logo_ufv_com_inscricao.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A966D22C53D7200B54D72 /* logo_ufv_com_inscricao.png */; };
 		5A6A967122C53D7300B54D72 /* labd2m.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A966E22C53D7200B54D72 /* labd2m.png */; };
@@ -46,7 +45,6 @@
 		5A6B38712139C5BD005FDF43 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B38702139C5BD005FDF43 /* Usuario.swift */; };
 		5A76879922C92D5900448AF7 /* agenda.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A76879822C92D5900448AF7 /* agenda.png */; };
 		5A76879B22C9489C00448AF7 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 5A76879A22C9489C00448AF7 /* File */; };
-		5A7BA1FC215EAA4300C048AA /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7BA1FB215EAA4300C048AA /* menu.png */; };
 		5A7BA1FF215EAF4C00C048AA /* FiltrarCategoriasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BA1FD215EAF4C00C048AA /* FiltrarCategoriasView.swift */; };
 		5A7BA200215EAF4C00C048AA /* FiltrarCategoriasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7BA1FE215EAF4C00C048AA /* FiltrarCategoriasView.xib */; };
 		5A7BA203215EB35900C048AA /* CategoriaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7BA202215EB35900C048AA /* CategoriaCell.xib */; };
@@ -142,9 +140,9 @@
 		5A412B38214ECEE000598DA8 /* UsuarioSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioSingleton.swift; sourceTree = "<group>"; };
 		5A412B3A214EDDC200598DA8 /* AppControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppControl.swift; sourceTree = "<group>"; };
 		5A460B6922CA8CC600A7F506 /* DrawRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawRoute.swift; sourceTree = "<group>"; };
-		5A5C3F2E217CD94B00A92A8E /* expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expand.png; path = ../../../../../../Downloads/expand.png; sourceTree = "<group>"; };
-		5A5C3F30217CDDBE00A92A8E /* ampliar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ampliar.png; path = ../../../../../../Downloads/ampliar.png; sourceTree = "<group>"; };
-		5A5C3F32217CE77F00A92A8E /* reduce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reduce.png; path = ../../../../../../Downloads/reduce.png; sourceTree = "<group>"; };
+		5A5C3F2E217CD94B00A92A8E /* expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expand.png; sourceTree = "<group>"; };
+		5A5C3F30217CDDBE00A92A8E /* ampliar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ampliar.png; sourceTree = "<group>"; };
+		5A5C3F32217CE77F00A92A8E /* reduce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reduce.png; sourceTree = "<group>"; };
 		5A67601C22D8FFBA0079C57D /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		5A67602022D91B720079C57D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A67602222D91D4E0079C57D /* SiseventosUFViOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiseventosUFViOS.entitlements; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 		5A6A965F22C5238E00B54D72 /* SplashScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreen.xib; sourceTree = "<group>"; };
 		5A6A966622C53A0800B54D72 /* SobreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobreView.swift; sourceTree = "<group>"; };
 		5A6A966722C53A0800B54D72 /* SobreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SobreView.xib; sourceTree = "<group>"; };
-		5A6A966A22C53C8400B54D72 /* labd2m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = labd2m.png; path = ../../../../../../Downloads/labd2m.png; sourceTree = "<group>"; };
 		5A6A966C22C53D7200B54D72 /* logo_sobre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_sobre.png; sourceTree = "<group>"; };
 		5A6A966D22C53D7200B54D72 /* logo_ufv_com_inscricao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_ufv_com_inscricao.png; sourceTree = "<group>"; };
 		5A6A966E22C53D7200B54D72 /* labd2m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = labd2m.png; sourceTree = "<group>"; };
@@ -176,7 +173,6 @@
 		5A6B38702139C5BD005FDF43 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		5A76879822C92D5900448AF7 /* agenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agenda.png; sourceTree = "<group>"; };
 		5A76879A22C9489C00448AF7 /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
-		5A7BA1FB215EAA4300C048AA /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = ../../../../../../Downloads/letras/menu.png; sourceTree = "<group>"; };
 		5A7BA1FD215EAF4C00C048AA /* FiltrarCategoriasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltrarCategoriasView.swift; sourceTree = "<group>"; };
 		5A7BA1FE215EAF4C00C048AA /* FiltrarCategoriasView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltrarCategoriasView.xib; sourceTree = "<group>"; };
 		5A7BA202215EB35900C048AA /* CategoriaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriaCell.xib; sourceTree = "<group>"; };
@@ -192,10 +188,10 @@
 		5ACA6BED2157FB540028E358 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5ACA6BEE2157FB540028E358 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		5ACA6BF4215802440028E358 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
-		5ACA6BF82158138A0028E358 /* editProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = editProfile.png; path = ../../../../../../Downloads/editProfile.png; sourceTree = "<group>"; };
-		5ACA6BFA215813C70028E358 /* notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notification.png; path = ../../../../../../Downloads/notification.png; sourceTree = "<group>"; };
-		5ACA6BFC215814020028E358 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = about.png; path = ../../../../../../Downloads/about.png; sourceTree = "<group>"; };
-		5ACA6BFE215814230028E358 /* quit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = quit.png; path = ../../../../../../Downloads/quit.png; sourceTree = "<group>"; };
+		5ACA6BF82158138A0028E358 /* editProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editProfile.png; sourceTree = "<group>"; };
+		5ACA6BFA215813C70028E358 /* notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notification.png; sourceTree = "<group>"; };
+		5ACA6BFC215814020028E358 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		5ACA6BFE215814230028E358 /* quit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quit.png; sourceTree = "<group>"; };
 		5ACA6C0021582F2C0028E358 /* EventosRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosRequester.swift; sourceTree = "<group>"; };
 		5ACA6C02215831F60028E358 /* EventosSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosSingleton.swift; sourceTree = "<group>"; };
 		5ACA6C04215838AE0028E358 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -443,8 +439,6 @@
 				5A6A966C22C53D7200B54D72 /* logo_sobre.png */,
 				5A6A966D22C53D7200B54D72 /* logo_ufv_com_inscricao.png */,
 				5A5C3F2E217CD94B00A92A8E /* expand.png */,
-				5A7BA1FB215EAA4300C048AA /* menu.png */,
-				5A6A966A22C53C8400B54D72 /* labd2m.png */,
 				5ACA6BFE215814230028E358 /* quit.png */,
 				5ACA6BF82158138A0028E358 /* editProfile.png */,
 				5ACA6BF4215802440028E358 /* home.png */,
@@ -683,7 +677,6 @@
 				5AE80F1721556D1B002D9A6D /* t.png in Resources */,
 				5A5C3F2F217CD94B00A92A8E /* expand.png in Resources */,
 				5AE80F1921556D1B002D9A6D /* v.png in Resources */,
-				5A6A966B22C53C8400B54D72 /* labd2m.png in Resources */,
 				5AE80F0721556D1B002D9A6D /* d.png in Resources */,
 				5AE80F1B21556D1B002D9A6D /* x.png in Resources */,
 				5A6A966922C53A0800B54D72 /* SobreView.xib in Resources */,
@@ -704,7 +697,6 @@
 				5AE80F0A21556D1B002D9A6D /* g.png in Resources */,
 				5AE80F0421556D1B002D9A6D /* a.png in Resources */,
 				5A2D76FC217E2D9C009C7534 /* ProgramacaoCell.xib in Resources */,
-				5A7BA1FC215EAA4300C048AA /* menu.png in Resources */,
 				5AE80F0F21556D1B002D9A6D /* l.png in Resources */,
 				5AE80F1021556D1B002D9A6D /* m.png in Resources */,
 				5AE80F1521556D1B002D9A6D /* r.png in Resources */,
@@ -746,7 +738,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SiseventosUFViOS/Pods-SiseventosUFViOS-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SiseventosUFViOS/Pods-SiseventosUFViOS-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
@@ -759,7 +751,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SiseventosUFViOS/Pods-SiseventosUFViOS-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SiseventosUFViOS/Pods-SiseventosUFViOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4B8DDEB10239F8362C9CA908 /* [CP] Embed Pods Frameworks */ = {
@@ -768,7 +760,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SiseventosUFViOS/Pods-SiseventosUFViOS-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SiseventosUFViOS/Pods-SiseventosUFViOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -793,7 +785,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SiseventosUFViOS/Pods-SiseventosUFViOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SiseventosUFViOS/Pods-SiseventosUFViOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9F92C2949DE53EBB0706B8AA /* [CP] Check Pods Manifest.lock */ = {
@@ -1045,7 +1037,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SiseventosUFViOS/SiseventosUFViOS.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Universidade Federal de Vicosa (7S2H235A78)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7S2H235A78;

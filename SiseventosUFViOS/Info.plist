@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>UFV Eventos</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIcons</key>
@@ -19,7 +21,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -38,7 +40,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>FacebookAppID</key>
 	<string>260146667992115</string>
 	<key>FacebookDisplayName</key>
@@ -62,6 +64,8 @@
 	<key>NSCalendarsUsageDescription</key>
 	<string>UFVEventos deseja integrar com o seu aplicativo de agendamentos para guardar os eventos que você tem interesse em comparecer.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>UFVEventos deseja encontrar sua localização atual para lhe auxiliar a se localizar em relação aos locais dos eventos</string>
+	<key>NSLocationAlwaysUsageDescription</key>
 	<string>UFVEventos deseja encontrar sua localização atual para lhe auxiliar a se localizar em relação aos locais dos eventos</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>UFVEventos deseja encontrar sua localização atual para lhe auxiliar a se localizar em relação aos locais dos eventos</string>
