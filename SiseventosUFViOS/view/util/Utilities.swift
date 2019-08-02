@@ -21,7 +21,7 @@ func formatarData(valor: String, formatoAtual: String, formatoNovo:String) -> St
     return "\(valorNovo)"
 }
 
-func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+func addEventToCalendar(title: String, location: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
     let eventStore = EKEventStore()
     
     eventStore.requestAccess(to: .event, completion: { (granted, error) in
@@ -32,8 +32,16 @@ func addEventToCalendar(title: String, description: String?, startDate: Date, en
             event.endDate = endDate
             event.notes = description
             event.calendar = eventStore.defaultCalendarForNewEvents
+            event.location = location
+            
+            // 1 hour before
+            var alarm:EKAlarm = EKAlarm(relativeOffset: -600 * 6)
+            event.alarms = [alarm]
+            
+            
             do {
                 try eventStore.save(event, span: .thisEvent)
+                
             } catch let e as NSError {
                 completion?(false, e)
                 return

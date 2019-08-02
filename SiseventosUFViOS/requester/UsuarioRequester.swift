@@ -150,6 +150,8 @@ class UsuarioRequester {
             }
         }, callbackFailure: {
             Alerta.alerta("Usuário inválido", msg: "O email indicado já foi cadastrado. Por favor, insira um novo email.", view: self.view!)
+            print("problema ao cadastrar usuário")
+            
             handleFinish((ready: true,success: false))
         })
     }

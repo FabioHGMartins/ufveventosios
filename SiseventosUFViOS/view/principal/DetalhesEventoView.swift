@@ -186,7 +186,13 @@ class DetalhesEventoView: UIViewController, CLLocationManagerDelegate {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date1 = dateFormatter.date(from: (evento.datainicio + " " + evento.horainicio))
         let date2 = dateFormatter.date(from: (evento.datafim + " " + evento.horafim))
-        addEventToCalendar(title: evento.denominacao, description: evento.descricao_evento, startDate: date1!, endDate: date2!) { (success, error) in
+        
+        var localizacao = ""
+        if evento.locais.count != 0 {
+            localizacao = evento.locais[0].descricao
+        }
+        
+        addEventToCalendar(title: evento.denominacao, location: localizacao, description: evento.descricao_evento, startDate: date1!, endDate: date2!) { (success, error) in
             if success {
                 Alerta.alerta("Evento agendado com sucesso!", msg: "", view: self)
             } else {
@@ -249,20 +255,27 @@ class DetalhesEventoView: UIViewController, CLLocationManagerDelegate {
                 return
             }
             
-            guard let route = routes[0] as? [String: Any] else {
-                return
+            //correcao de falha quando localização é muito longe do evento
+            if routes.count != 0 {
+                print("Desenhou a rota")
+                
+                guard let route = routes[0] as? [String: Any] else {
+                    return
+                }
+                
+                guard let overview_polyline = route["overview_polyline"] as? [String: Any] else {
+                    return
+                }
+                
+                guard let polyLineString = overview_polyline["points"] as? String else {
+                    return
+                }
+                
+                //Call this method to draw path on map
+                self.drawPath(from: polyLineString)
+            }else{
+                print("impossível desenhar a rota")
             }
-            
-            guard let overview_polyline = route["overview_polyline"] as? [String: Any] else {
-                return
-            }
-            
-            guard let polyLineString = overview_polyline["points"] as? String else {
-                return
-            }
-            
-            //Call this method to draw path on map
-            self.drawPath(from: polyLineString)
         })
         task.resume()
     }
