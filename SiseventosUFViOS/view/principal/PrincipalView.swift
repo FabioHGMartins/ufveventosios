@@ -26,7 +26,11 @@ class PrincipalView: UIViewController {
         super.viewDidLoad()
         self.title = "UFV Eventos"
         
+        //back button white color
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         self.navigationItem.hidesBackButton = true
+        
         
         let xib = UINib(nibName: "EventoCell", bundle: nil)
         self.tableView?.register(xib, forCellReuseIdentifier: "cell")
@@ -38,6 +42,7 @@ class PrincipalView: UIViewController {
         self.view.addGestureRecognizer(swipeRight)
         
         navigationController?.navigationBar.barTintColor = UIColor(hexFromString: "890505")
+        
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         
@@ -47,6 +52,8 @@ class PrincipalView: UIViewController {
             target: self,
             action: #selector(abrirMenu)
         )
+        
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white //opcao MENU branca na barra de navegacao
         
         requester.getEventos(offset: offset, limit: limit) { (ready, success) in
             if(ready) {

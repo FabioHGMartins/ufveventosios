@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KYDrawerController
 
 class NotificacoesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -27,6 +28,20 @@ class NotificacoesView: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         
         self.title = "Notificações"
+        
+        //back button white color
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        self.navigationItem.hidesBackButton = true
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Menu",
+            style: UIBarButtonItemStyle.plain,
+            target: self,
+            action: #selector(abrirMenu)
+        )
+        
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white //opcao MENU branca na barra de navegacao
         
         let xib = UINib(nibName: "CategoriaCell", bundle: nil)
         self.tableView?.register(xib, forCellReuseIdentifier: "cell")
@@ -90,4 +105,9 @@ class NotificacoesView: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
 
+    @objc func abrirMenu(_ sender: UIBarButtonItem) {
+        if let drawerController = navigationController?.parent as? KYDrawerController {
+            drawerController.setDrawerState(.opened, animated: true)
+        }
+    }
 }

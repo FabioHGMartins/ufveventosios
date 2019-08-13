@@ -20,9 +20,13 @@ class EsqueciSenhaView: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         self.title = "Recuperar Senha"
-        let voltarBt = UIBarButtonItem()
+        
+        /*let voltarBt = UIBarButtonItem()
         voltarBt.title = "Voltar"
-        self.navigationItem.backBarButtonItem = voltarBt
+        self.navigationItem.backBarButtonItem = voltarBt*/
+        
+        //back button white color
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
         requester = UsuarioRequester(self)
         

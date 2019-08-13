@@ -44,6 +44,9 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
         self.hideKeyboardWhenTappedAround()
         self.title = "Atualizar Perfil"
         
+        //back button white color
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         self.navigationItem.hidesBackButton = true
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
@@ -60,6 +63,8 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
             target: self,
             action: #selector(abrirMenu)
         )
+        
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white //opcao MENU branca na barra de navegacao
         
         self.sexoPicker?.delegate = self
         self.sexoPicker?.dataSource = self

@@ -11,10 +11,20 @@ import KYDrawerController
 
 
 class SobreView: UIViewController {
+    
+    @IBOutlet var labd2m:UIImageView?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //mantem a proporcao do logo labd2m
+        labd2m?.contentMode = UIViewContentMode.scaleAspectFill
+        
         self.title = "Sobre"
+        
+        //back button white color
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
         self.navigationItem.hidesBackButton = true
         
@@ -32,6 +42,8 @@ class SobreView: UIViewController {
             target: self,
             action: #selector(abrirMenu)
         )
+        
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white //opcao MENU branca na barra de navegacao
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {

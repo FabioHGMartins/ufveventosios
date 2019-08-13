@@ -33,9 +33,19 @@ class LoginView: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         self.title = "Login"
-        let voltarBt = UIBarButtonItem()
+        
+        //back button white color
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationItem.hidesBackButton = true
+        
+        /*let voltarBt = UIBarButtonItem()
         voltarBt.title = "Voltar"
-        self.navigationItem.backBarButtonItem = voltarBt        
+        self.navigationItem.backBarButtonItem = voltarBt*/
+        
+        
+        
+        navigationController?.navigationBar.barTintColor = UIColor(hexFromString: "890505")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         GIDSignIn.sharedInstance().uiDelegate = self
         

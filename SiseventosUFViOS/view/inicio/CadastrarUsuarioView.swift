@@ -39,6 +39,9 @@ class CadastrarUsuarioView: UIViewController, UIPickerViewDelegate, UIPickerView
         self.hideKeyboardWhenTappedAround()
         self.title = "Cadastrar"
         
+        //back button white color
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         self.sexoPicker?.delegate = self
         self.sexoPicker?.dataSource = self
         

@@ -47,10 +47,25 @@ class DetalhesEventoView: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var userLocation:CLLocationCoordinate2D?
     var markerUser = GMSMarker()
+    
+    var contUpdateLocation = 0 //teste para contar atualizacoes de localizacao
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        contUpdateLocation = 0 //zera o contador de localizacao
+        print("Tela fechou")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Detalhes do evento"
+        
+        //back button white color
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        let voltarBt = UIBarButtonItem()
+        voltarBt.title = "Voltar"
+        self.navigationController?.navigationItem.backBarButtonItem = voltarBt
 
         let xib = UINib(nibName: "ProgramacaoCell", bundle: nil)
         self.programacaoTableView.register(xib, forCellReuseIdentifier: "cell")
@@ -65,11 +80,15 @@ class DetalhesEventoView: UIViewController, CLLocationManagerDelegate {
             print("ServicesEnabled")
         }
         
+        //ativa a visualizacao da localizacao
+        mapView.isMyLocationEnabled = true
+        
         scrollView.layoutIfNeeded()
         scrollView.isScrollEnabled = true
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: scrollView.frame.size.height)
         showContent()
         loadInfoEvento()
+    
         
     }
     
@@ -78,9 +97,13 @@ class DetalhesEventoView: UIViewController, CLLocationManagerDelegate {
             return
         }
         userLocation = locValue
+        
+        //teste contador de atualizacao
+        contUpdateLocation += 1
+        print("Contador: ", contUpdateLocation)
+        
         loadCamera()
-        
-        
+
     }
     
     func loadInfoEvento() {
@@ -212,8 +235,12 @@ class DetalhesEventoView: UIViewController, CLLocationManagerDelegate {
         
         let mapBounds = GMSCoordinateBounds(path: path)
         let cameraUpdate = GMSCameraUpdate.fit(mapBounds)
-        mapView.moveCamera(cameraUpdate)
         
+        if contUpdateLocation <= 1{
+            mapView.moveCamera(cameraUpdate)
+        }else{
+            print("Camera já esta posicionada")
+        }
         
         for local in evento.locais {
             let marker = GMSMarker()
@@ -229,6 +256,7 @@ class DetalhesEventoView: UIViewController, CLLocationManagerDelegate {
         let posicao = CLLocationCoordinate2D(latitude: Double((userLocation?.latitude)!), longitude: Double((userLocation?.longitude)!))
         markerUser.position = posicao
         markerUser.title = "Você"
+        markerUser.icon = GMSMarker.markerImage(with: UIColor.blue)
         markerUser.map = mapView
     }
     

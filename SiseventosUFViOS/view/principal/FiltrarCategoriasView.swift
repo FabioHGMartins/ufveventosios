@@ -24,6 +24,14 @@ class FiltrarCategoriasView: UIViewController, UITableViewDelegate, UITableViewD
         
         self.title = "Escolher Categorias"
         
+        //back button white color
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        let voltarBt = UIBarButtonItem()
+        voltarBt.title = "Voltar"
+        self.navigationController?.navigationItem.backBarButtonItem = voltarBt
+        
+        
         let xib = UINib(nibName: "CategoriaCell", bundle: nil)
         self.tableView?.register(xib, forCellReuseIdentifier: "cell")
         

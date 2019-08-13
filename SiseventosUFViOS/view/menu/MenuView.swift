@@ -75,7 +75,7 @@ class MenuView: UIViewController {
     }
     
     @IBAction func sair() {
-        let loginView = LoginView(nibName: "LoginView", bundle: nil)
+        //let loginView = LoginView(nibName: "LoginView", bundle: nil)
         AppControl.preferences.set(false, forKey: "logado")
         AppControl.preferences.set(nil, forKey: "email")
         AppControl.preferences.set(nil, forKey: "nome")
@@ -85,7 +85,14 @@ class MenuView: UIViewController {
         } else {
             AppControl.preferences.set(nil, forKey: "senha")
         }
-        self.present(loginView, animated: true, completion: nil)
+        //self.present(loginView, animated: true, completion: nil)
+        
+        if let drawerController = parent as? KYDrawerController {
+            let loginView = LoginView()
+            (drawerController.mainViewController as! UINavigationController).pushViewController(loginView, animated: true)
+            drawerController.setDrawerState(.closed, animated: true)
+        }
+        
     }
 
 }
