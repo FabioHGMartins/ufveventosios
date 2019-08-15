@@ -140,6 +140,8 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
                 }
                 self.progress!.stopAnimating()
             }
+        }else{
+            Alerta.alerta("Edição incompleta", msg: "Favor preencher campos obrigatórios", view: self)
         }
     }
     

@@ -86,13 +86,18 @@ class CadastrarUsuarioView: UIViewController, UIPickerViewDelegate, UIPickerView
                 }
                 self.progress!.stopAnimating()
             }
+        }else{
+            Alerta.alerta("Cadastro incompleto", msg: "Favor preencher campos obrigatórios", view: self)
         }
     }
     
     func recuperaNasc() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
+        //este é o padrão estabelecido pela API
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         let dateString = dateFormatter.string(from: dataNascPicker!.date)
+        print(dateString)
         return dateString
     }
 

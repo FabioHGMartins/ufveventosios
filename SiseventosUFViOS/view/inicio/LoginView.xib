@@ -36,11 +36,10 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lW9-2Z-e3y">
-                    <rect key="frame" x="30" y="170" width="315" height="310"/>
+                    <rect key="frame" x="30" y="170" width="315" height="270"/>
                     <subviews>
                         <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJn-LN-eTq">
-                            <rect key="frame" x="8" y="172" width="299" height="30"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="8" y="152" width="299" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="cSe-NE-UUN"/>
                             </constraints>
@@ -52,7 +51,7 @@
                             </connections>
                         </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Sua senha" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C7G-WS-4EX">
-                            <rect key="frame" x="8" y="134" width="299" height="30"/>
+                            <rect key="frame" x="8" y="114" width="299" height="30"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Giv-hE-0IG"/>
@@ -77,27 +76,27 @@
                             </connections>
                         </textField>
                         <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Campo obrigatório" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G5F-jX-Kge">
-                            <rect key="frame" x="8" y="84" width="299" height="30"/>
+                            <rect key="frame" x="8" y="84" width="299" height="10"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="jZ1-zp-owR"/>
+                                <constraint firstAttribute="height" constant="10" id="jZ1-zp-owR"/>
                             </constraints>
                             <color key="textColor" red="1" green="0.21767435160000001" blue="0.31242643190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Campo obrigatório" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sAl-yA-qNH">
-                            <rect key="frame" x="8" y="210" width="299" height="30"/>
+                            <rect key="frame" x="8" y="190" width="299" height="10"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="Ht3-ZX-ad3"/>
+                                <constraint firstAttribute="height" constant="10" id="Ht3-ZX-ad3"/>
                             </constraints>
                             <color key="textColor" red="1" green="0.21767435160000001" blue="0.31242643190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuJ-Ur-oWN">
-                            <rect key="frame" x="8" y="260" width="299" height="30"/>
+                            <rect key="frame" x="8" y="220" width="299" height="30"/>
                             <color key="backgroundColor" red="0.6470588235294118" green="0.14117647058823529" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="gMC-5m-Cpw"/>
@@ -158,7 +157,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Não possui conta?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qbO-nV-39M">
-                    <rect key="frame" x="30" y="500" width="187" height="30"/>
+                    <rect key="frame" x="30" y="460" width="187" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="4cV-ha-8I6"/>
                     </constraints>
@@ -167,7 +166,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceu-6M-b5z">
-                    <rect key="frame" x="225" y="550" width="120" height="30"/>
+                    <rect key="frame" x="225" y="510" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="adU-VD-rnY"/>
                     </constraints>
@@ -180,7 +179,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jw-u7-pZ5">
-                    <rect key="frame" x="225" y="500" width="74" height="30"/>
+                    <rect key="frame" x="225" y="460" width="74" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Cum-9N-tds"/>
                     </constraints>
@@ -192,8 +191,8 @@
                         <action selector="cadastrarUsuario" destination="-1" eventType="touchDown" id="4Vg-KM-L8I"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOa-my-pNJ" customClass="GIDSignInButton">
-                    <rect key="frame" x="30" y="544.5" width="157.5" height="41"/>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOa-my-pNJ" customClass="GIDSignInButton">
+                    <rect key="frame" x="30" y="504.5" width="157.5" height="41"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="OOa-my-pNJ" secondAttribute="height" multiplier="157:41" id="n2B-6C-iL4"/>

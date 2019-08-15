@@ -37,7 +37,7 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="1160"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fb5-TD-1u2">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="1168"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1128"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_login.png" translatesAutoresizingMaskIntoConstraints="NO" id="aKh-Fn-UFZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
@@ -46,7 +46,7 @@
                                     </constraints>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="et7-Gn-Hev">
-                                    <rect key="frame" x="305" y="1118" width="40" height="30"/>
+                                    <rect key="frame" x="305" y="1078" width="40" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="3Sc-d1-BOm"/>
                                         <constraint firstAttribute="height" constant="30" id="Ye6-Xc-biP"/>
@@ -60,7 +60,7 @@
                                     </connections>
                                 </button>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Já possui conta?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ex7-0b-5vY">
-                                    <rect key="frame" x="30" y="1118" width="120" height="30"/>
+                                    <rect key="frame" x="30" y="1078" width="120" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="120" id="fZk-9R-GjM"/>
                                         <constraint firstAttribute="height" constant="30" id="jTv-yF-fhg"/>
@@ -70,7 +70,7 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dky-cb-OqR">
-                                    <rect key="frame" x="30" y="150" width="315" height="948"/>
+                                    <rect key="frame" x="30" y="150" width="315" height="908"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Seu nome" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jDK-vN-kur">
                                             <rect key="frame" x="8" y="8" width="80" height="30"/>
@@ -96,17 +96,17 @@
                                             </connections>
                                         </textField>
                                         <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Campo obrigatório" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aU8-nN-3vk">
-                                            <rect key="frame" x="8" y="84" width="299" height="30"/>
+                                            <rect key="frame" x="8" y="84" width="299" height="20"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="zEW-Ia-sWl"/>
+                                                <constraint firstAttribute="height" constant="20" id="zEW-Ia-sWl"/>
                                             </constraints>
                                             <color key="textColor" red="1" green="0.21767435160357362" blue="0.31242643189347175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Seu email" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c8N-Un-9dk">
-                                            <rect key="frame" x="8" y="134" width="80" height="30"/>
+                                            <rect key="frame" x="8" y="124" width="80" height="30"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="gSf-ax-aIa"/>
@@ -117,7 +117,7 @@
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kG1-U9-4bv">
-                                            <rect key="frame" x="8" y="172" width="299" height="30"/>
+                                            <rect key="frame" x="8" y="162" width="299" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="OpV-E3-SL8"/>
                                             </constraints>
@@ -129,7 +129,7 @@
                                             </connections>
                                         </textField>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Senha" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TLE-66-Fgz">
-                                            <rect key="frame" x="8" y="260" width="80" height="30"/>
+                                            <rect key="frame" x="8" y="240" width="80" height="30"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="TUs-WO-8ie"/>
@@ -140,27 +140,27 @@
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Campo obrigatório" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Cci-Ej-p1J">
-                                            <rect key="frame" x="8" y="210" width="299" height="30"/>
+                                            <rect key="frame" x="8" y="200" width="299" height="20"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="HcL-1W-SIm"/>
+                                                <constraint firstAttribute="height" constant="20" id="HcL-1W-SIm"/>
                                             </constraints>
                                             <color key="textColor" red="1" green="0.21767435160000001" blue="0.31242643190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Campo obrigatório" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="s87-Ib-Y72">
-                                            <rect key="frame" x="8" y="336" width="299" height="30"/>
+                                            <rect key="frame" x="8" y="316" width="299" height="20"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="b4h-Fg-I2f"/>
+                                                <constraint firstAttribute="height" constant="20" id="b4h-Fg-I2f"/>
                                             </constraints>
                                             <color key="textColor" red="1" green="0.21767435160000001" blue="0.31242643190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7TQ-at-ELS">
-                                            <rect key="frame" x="8" y="298" width="299" height="30"/>
+                                            <rect key="frame" x="8" y="278" width="299" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="jK2-rv-hn8"/>
                                             </constraints>
@@ -172,7 +172,7 @@
                                             </connections>
                                         </textField>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Data de nascimento" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dRc-cE-jZR">
-                                            <rect key="frame" x="8" y="512" width="299" height="30"/>
+                                            <rect key="frame" x="8" y="472" width="299" height="30"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="OJg-nw-MJk"/>
@@ -182,13 +182,13 @@
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4s-zB-FMK">
-                                            <rect key="frame" x="8" y="763" width="299" height="115"/>
+                                            <rect key="frame" x="8" y="723" width="299" height="115"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="115" id="Vgs-vC-7hl"/>
                                             </constraints>
                                         </pickerView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Sexo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LdX-hs-0E0">
-                                            <rect key="frame" x="8" y="725" width="299" height="30"/>
+                                            <rect key="frame" x="8" y="685" width="299" height="30"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="oDQ-Fg-LMU"/>
@@ -198,7 +198,7 @@
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaY-OP-nNY">
-                                            <rect key="frame" x="8" y="898" width="299" height="30"/>
+                                            <rect key="frame" x="8" y="858" width="299" height="30"/>
                                             <color key="backgroundColor" red="0.64710301160000006" green="0.14071249960000001" blue="0.2050333023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="UcB-Eq-bk2"/>
@@ -216,7 +216,7 @@
                                             </connections>
                                         </button>
                                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qBK-jP-9Na">
-                                            <rect key="frame" x="8" y="550" width="299" height="155"/>
+                                            <rect key="frame" x="8" y="510" width="299" height="155"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="155" id="F3q-lj-GL9"/>
                                             </constraints>
@@ -226,7 +226,7 @@
                                             <locale key="locale" localeIdentifier="pt_BR"/>
                                         </datePicker>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Confirmação da senha" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yau-o1-Thk">
-                                            <rect key="frame" x="8" y="386" width="160" height="30"/>
+                                            <rect key="frame" x="8" y="356" width="160" height="30"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="160" id="Oyb-hh-dQR"/>
@@ -237,7 +237,7 @@
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Idg-Ei-epZ">
-                                            <rect key="frame" x="8" y="424" width="299" height="30"/>
+                                            <rect key="frame" x="8" y="394" width="299" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="rfz-N0-jzT"/>
                                             </constraints>
@@ -249,10 +249,10 @@
                                             </connections>
                                         </textField>
                                         <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Campo obrigatório" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KNf-n5-00x">
-                                            <rect key="frame" x="8" y="462" width="299" height="30"/>
+                                            <rect key="frame" x="8" y="432" width="299" height="20"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="BEP-Fp-6Bb"/>
+                                                <constraint firstAttribute="height" constant="20" id="BEP-Fp-6Bb"/>
                                             </constraints>
                                             <color key="textColor" red="1" green="0.21767435160000001" blue="0.31242643190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>

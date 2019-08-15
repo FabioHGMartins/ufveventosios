@@ -255,7 +255,7 @@ class DetalhesEventoView: UIViewController, CLLocationManagerDelegate {
         
         let posicao = CLLocationCoordinate2D(latitude: Double((userLocation?.latitude)!), longitude: Double((userLocation?.longitude)!))
         markerUser.position = posicao
-        markerUser.title = "Você"
+        markerUser.title = "Minha localização"
         markerUser.icon = GMSMarker.markerImage(with: UIColor.blue)
         markerUser.map = mapView
     }

@@ -10,6 +10,12 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+extension String {
+    var isInt: Bool {
+        return Int(self) != nil
+    }
+}
+
 class UsuarioRequester {
     
     var view:UIViewController?
@@ -143,8 +149,10 @@ class UsuarioRequester {
     //o callback handlefinish é usado para esperar o retorno da api antes de decidir se foi um sucesso ou não
     func cadastrarUsuario(usuario: Usuario, handleFinish:@escaping ((ready: Bool, success:Bool))->()){
         self.postUsuario(usuario: usuario, callbackSuccess: {
+            print("Cadastrou")
             self.login(user: usuario.email, senha: usuario.senha) { (ready, success) in
                 if(ready) {
+                    print("Login")
                     handleFinish((ready: true, success: success))
                 }
             }
@@ -209,11 +217,19 @@ class UsuarioRequester {
         let parameters = ["data" : jsonObj]
         Endpoints.shared.makeRequest(apiUrl: Endpoints.shared.setUsuarioGoogle, method: .post, parameters: parameters, callbackSuccess: {(info:Data?) in
             if let responseData =  info{
-                let stringInt = String.init(data: responseData, encoding: String.Encoding.utf8)
-                print(stringInt)
-                if let num = Int.init(stringInt!) {
-                    callbackSuccess(num)
-                } else {
+                if let stringInt = String(data: responseData, encoding: String.Encoding.utf8){
+                    print(stringInt)
+                    
+                    //TODO: fazer a conversão de string vinda de dados para INT
+                    callbackSuccess(Int(stringInt))
+                    
+                    /*if let num = Int.init(stringInt!) {
+                        callbackSuccess(num)
+                    } else {
+                        callbackFailure()
+                    }*/
+                    
+                }else{
                     callbackFailure()
                 }
             }
@@ -234,11 +250,18 @@ class UsuarioRequester {
 
         Endpoints.shared.makeRequest(apiUrl: Endpoints.shared.setUsuario, method: .post, parameters: parameters, callbackSuccess: { (info:Data?) in
             if let responseData =  info{
-                let stringInt = String.init(data: responseData, encoding: String.Encoding.utf8)
-                if let num = Int.init(stringInt!) {
-                    print(num)
+                if let stringInt = String(data: responseData, encoding: String.Encoding.utf8){
+                    print ("Retorno do cadastro", stringInt.isInt, stringInt) //retirar teste futuramente
                     callbackSuccess()
-                } else {
+                    
+                    /*if let num = Int.init(stringInt!) {
+                        print(num)
+                        callbackSuccess()
+                    } else {
+                        callbackFailure()
+                    }*/
+                    
+                }else{
                     callbackFailure()
                 }
             }
