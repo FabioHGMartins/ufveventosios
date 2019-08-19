@@ -26,6 +26,8 @@ class CadastrarUsuarioView: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet var emailTfErro:UITextView?
     @IBOutlet var senhaTfErro:UITextView?
     @IBOutlet var confirmarSenhaTfErro:UITextView?
+    
+    @IBOutlet var switchDataNascimento:UISwitch?
 
     var pickerData: Array<String>!
     var sexoSelecionado : String!
@@ -63,13 +65,35 @@ class CadastrarUsuarioView: UIViewController, UIPickerViewDelegate, UIPickerView
         
     }
     
+    @IBAction func escolheOpcaoPorDataNascimento(){
+        if switchDataNascimento?.isOn == true {
+            print ("Switch ligado")
+            dataNascPicker?.isEnabled = true
+        }else{
+            print ("Switch desligado")
+            dataNascPicker?.isEnabled = false
+        }
+    }
+    
     @IBAction func login() {
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func cadastrar() {
         if(validaCampos()) {
-            let usuario = Usuario(nome: (nomeTf?.text)!, email: (emailTf?.text)!, senha: (senhaTf?.text)!, nascimento: recuperaNasc(), sexo: sexoSelecionado)
+            
+            var dt_nasc = ""
+            
+            //define data de nascimento padrão para quem não quiser informar
+            if switchDataNascimento?.isOn == true {
+                dt_nasc = recuperaNasc()
+            }else{
+                dt_nasc = "1900-1-1"
+            }
+            
+            print(sexoSelecionado)
+            
+            let usuario = Usuario(nome: (nomeTf?.text)!, email: (emailTf?.text)!, senha: (senhaTf?.text)!, nascimento: dt_nasc, sexo: sexoSelecionado)
             self.progress!.startAnimating()
             requester.cadastrarUsuario(usuario: usuario) { (ready,success) in
                 if(ready) {

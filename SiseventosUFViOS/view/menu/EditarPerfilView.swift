@@ -33,6 +33,8 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
     @IBOutlet var senhaNovaTfErro:UITextView?
     @IBOutlet var confirmarSenhaNovaTfErro:UITextView?
     
+    @IBOutlet var switchDataNascimento:UISwitch?
+    
     var pickerData: Array<String>!
     var sexoSelecionado : String!
     
@@ -89,18 +91,28 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatter.date(from: (usuario?.nascimento)!)
-        dataNascPicker?.date = date!
         
-        print(date!)
+        print(usuario!.nascimento!, " ", usuario!.sexo!)
         
-        sexoPicker?.selectRow(getPickerRow((usuario?.sexo)!), inComponent: 0, animated: false)
+        //verifica data de nascimento padrão
+        if usuario!.nascimento! == "1900-01-01" || usuario!.nascimento! == "1900-1-1" {
+            switchDataNascimento?.isOn = false
+            dataNascPicker?.isEnabled = false
+        }else{
+            let date = dateFormatter.date(from: (usuario?.nascimento)!)
+            dataNascPicker?.date = date!
+            print(date!)
+        }
+        
+        //TODO: resolver este problema. Quando não seleciona sexo na edição e mantem o carregado, zera a escolha
+        sexoPicker?.selectRow(getPickerRow((usuario!.sexo)!), inComponent: 0, animated: false)
         
         requester = UsuarioRequester(self)
         
     }
     
     func getPickerRow(_ sexo: String) -> Int {
+        //TODO: colocar log em todas as opções
         if(sexo == "p") {
             return 0
         } else if(sexo == "f") {
@@ -109,6 +121,16 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
             return 2
         } else {
             return 3
+        }
+    }
+    
+    @IBAction func escolheOpcaoPorDataNascimento(){
+        if switchDataNascimento?.isOn == true {
+            print ("Switch ligado")
+            dataNascPicker?.isEnabled = true
+        }else{
+            print ("Switch desligado")
+            dataNascPicker?.isEnabled = false
         }
     }
     
@@ -125,7 +147,20 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
             if (senhaNovaTf?.isEnabled)! {
                 senhaNova = (senhaNovaTf?.text)!
             }
-            let usuario = Usuario(id: (UsuarioSingleton.shared.usuario?.id)!,nome: (nomeTf?.text)!, email: usuarioNovo, senha: senhaNova, nascimento: recuperaNasc(), sexo: sexoSelecionado)
+            
+            var dt_nasc = ""
+            
+            //define data de nascimento padrão para quem não quiser informar
+            if switchDataNascimento?.isOn == true {
+                dt_nasc = recuperaNasc()
+            }else{
+                dt_nasc = "1900-1-1"
+            }
+            
+            //TODO: melhorar esse log
+            print(sexoSelecionado)
+            
+            let usuario = Usuario(id: (UsuarioSingleton.shared.usuario?.id)!,nome: (nomeTf?.text)!, email: usuarioNovo, senha: senhaNova, nascimento: dt_nasc, sexo: sexoSelecionado)
             self.progress!.startAnimating()
             let att = (editarEmailBt?.isSelected)! || (editarSenhaBt?.isSelected)!
             requester.atualizarUsuario(usuario: usuario, att: att, usuarioAtual: usuarioAtual, senhaAtual: senhaAtual) { (ready,success) in

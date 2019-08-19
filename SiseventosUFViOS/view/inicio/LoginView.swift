@@ -55,6 +55,27 @@ class LoginView: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
         configUserDefaults()
     }
     
+    @IBAction func entrarSemLogin(){
+        print("\n\nEntrei sem login\n\n")
+        
+        requester.login(user: "login_anonimo@anonimo.com", senha: "9anONimo123") { (ready, success) in
+            if(ready) {
+                self.progress!.stopAnimating()
+                self.progress!.isHidden = true
+                if (success) {
+                    let principalView = PrincipalView(nibName:"PrincipalView", bundle: nil)
+                    let menuView = MenuView(nibName:"MenuView", bundle: nil)
+                    let drawerKYController     = KYDrawerController(drawerDirection: .left, drawerWidth: 280)
+                    drawerKYController.mainViewController = UINavigationController(
+                        rootViewController: principalView
+                    )
+                    drawerKYController.drawerViewController = menuView
+                    self.present(drawerKYController, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
     @IBAction func cadastrarUsuario() {
         let cadastrarView = CadastrarUsuarioView()
         self.navigationController?.pushViewController(cadastrarView, animated: true)

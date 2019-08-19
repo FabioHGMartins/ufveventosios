@@ -36,7 +36,7 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lW9-2Z-e3y">
-                    <rect key="frame" x="30" y="170" width="315" height="270"/>
+                    <rect key="frame" x="30" y="170" width="315" height="320"/>
                     <subviews>
                         <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJn-LN-eTq">
                             <rect key="frame" x="8" y="152" width="299" height="30"/>
@@ -124,9 +124,23 @@
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDE-FW-kaK">
+                            <rect key="frame" x="8" y="267" width="299" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="p4s-D5-DrA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Entrar sem login">
+                                <color key="titleColor" red="0.64827251434326172" green="0.14249688386917114" blue="0.2050471305847168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="entrarSemLogin" destination="-1" eventType="touchDown" id="dmc-zw-eTL"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="EDE-FW-kaK" firstAttribute="centerX" secondItem="lW9-2Z-e3y" secondAttribute="centerX" id="4gt-e6-8rD"/>
                         <constraint firstItem="G5F-jX-Kge" firstAttribute="top" secondItem="CFp-56-5W5" secondAttribute="bottom" constant="8" id="8gr-le-g33"/>
                         <constraint firstItem="CFp-56-5W5" firstAttribute="leading" secondItem="lW9-2Z-e3y" secondAttribute="leading" constant="8" id="Bij-VL-ioU"/>
                         <constraint firstAttribute="trailing" secondItem="CFp-56-5W5" secondAttribute="trailing" constant="8" id="Fm9-ds-jjT"/>
@@ -134,9 +148,12 @@
                         <constraint firstItem="sAl-yA-qNH" firstAttribute="leading" secondItem="lW9-2Z-e3y" secondAttribute="leading" constant="8" id="KWb-t1-sSc"/>
                         <constraint firstAttribute="trailing" secondItem="fuJ-Ur-oWN" secondAttribute="trailing" constant="8" id="OQC-0x-1Ic"/>
                         <constraint firstItem="VJn-LN-eTq" firstAttribute="top" secondItem="C7G-WS-4EX" secondAttribute="bottom" constant="8" id="QoQ-3W-U6X"/>
+                        <constraint firstAttribute="bottom" secondItem="EDE-FW-kaK" secondAttribute="bottom" constant="10" id="SDZ-uR-yb2"/>
                         <constraint firstItem="sAl-yA-qNH" firstAttribute="top" secondItem="VJn-LN-eTq" secondAttribute="bottom" constant="8" id="TGD-7O-ycT"/>
                         <constraint firstItem="fuJ-Ur-oWN" firstAttribute="leading" secondItem="lW9-2Z-e3y" secondAttribute="leading" constant="8" id="USx-PH-XQS"/>
                         <constraint firstAttribute="trailing" secondItem="C7G-WS-4EX" secondAttribute="trailing" constant="8" id="WmC-uR-631"/>
+                        <constraint firstItem="EDE-FW-kaK" firstAttribute="top" secondItem="fuJ-Ur-oWN" secondAttribute="bottom" constant="10" id="X3Q-DK-FiN"/>
+                        <constraint firstItem="EDE-FW-kaK" firstAttribute="width" secondItem="fuJ-Ur-oWN" secondAttribute="width" id="YGK-Xh-Xqf"/>
                         <constraint firstItem="CFp-56-5W5" firstAttribute="top" secondItem="2GU-3j-Haf" secondAttribute="bottom" constant="8" id="dot-ge-pmy"/>
                         <constraint firstItem="C7G-WS-4EX" firstAttribute="top" secondItem="G5F-jX-Kge" secondAttribute="bottom" constant="20" id="eeX-t0-Uez"/>
                         <constraint firstAttribute="trailing" secondItem="G5F-jX-Kge" secondAttribute="trailing" constant="8" id="gqy-Dn-FOi"/>
@@ -155,9 +172,14 @@
                             <integer key="value" value="9"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="lGD-if-ul6"/>
+                        </mask>
+                    </variation>
                 </view>
                 <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Não possui conta?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qbO-nV-39M">
-                    <rect key="frame" x="30" y="460" width="187" height="30"/>
+                    <rect key="frame" x="30" y="510" width="187" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="4cV-ha-8I6"/>
                     </constraints>
@@ -166,7 +188,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceu-6M-b5z">
-                    <rect key="frame" x="225" y="510" width="120" height="30"/>
+                    <rect key="frame" x="225" y="560" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="adU-VD-rnY"/>
                     </constraints>
@@ -179,7 +201,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jw-u7-pZ5">
-                    <rect key="frame" x="225" y="460" width="74" height="30"/>
+                    <rect key="frame" x="225" y="510" width="74" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Cum-9N-tds"/>
                     </constraints>
@@ -192,7 +214,7 @@
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOa-my-pNJ" customClass="GIDSignInButton">
-                    <rect key="frame" x="30" y="504.5" width="157.5" height="41"/>
+                    <rect key="frame" x="30" y="554.5" width="157.5" height="41"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="OOa-my-pNJ" secondAttribute="height" multiplier="157:41" id="n2B-6C-iL4"/>
@@ -212,16 +234,16 @@
                 <constraint firstItem="lW9-2Z-e3y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="XPV-rO-avM"/>
                 <constraint firstItem="ceu-6M-b5z" firstAttribute="leading" secondItem="6Jw-u7-pZ5" secondAttribute="leading" id="Xis-GM-vtF"/>
                 <constraint firstItem="OOa-my-pNJ" firstAttribute="leading" secondItem="lW9-2Z-e3y" secondAttribute="leading" id="bpM-W5-GFx"/>
-                <constraint firstItem="ceu-6M-b5z" firstAttribute="top" secondItem="6Jw-u7-pZ5" secondAttribute="bottom" constant="20" id="hjt-vb-6dd"/>
+                <constraint firstItem="ceu-6M-b5z" firstAttribute="top" secondItem="6Jw-u7-pZ5" secondAttribute="bottom" constant="10" id="hjt-vb-6dd"/>
                 <constraint firstItem="TAX-um-9Nr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hlx-1o-dY6"/>
-                <constraint firstItem="qbO-nV-39M" firstAttribute="top" secondItem="lW9-2Z-e3y" secondAttribute="bottom" constant="20" id="lPO-Cd-gof"/>
-                <constraint firstItem="6Jw-u7-pZ5" firstAttribute="top" secondItem="lW9-2Z-e3y" secondAttribute="bottom" constant="20" id="mCG-Jn-4EW"/>
+                <constraint firstItem="qbO-nV-39M" firstAttribute="top" secondItem="lW9-2Z-e3y" secondAttribute="bottom" constant="10" id="lPO-Cd-gof"/>
+                <constraint firstItem="6Jw-u7-pZ5" firstAttribute="top" secondItem="lW9-2Z-e3y" secondAttribute="bottom" constant="10" id="mCG-Jn-4EW"/>
                 <constraint firstItem="TAX-um-9Nr" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="mgZ-Zz-zig"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lW9-2Z-e3y" secondAttribute="trailing" constant="30" id="pkS-tH-NcU"/>
                 <constraint firstItem="OOa-my-pNJ" firstAttribute="trailing" secondItem="lW9-2Z-e3y" secondAttribute="centerX" id="yEz-UT-u2x"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="26.5" y="52.5"/>
+            <point key="canvasLocation" x="26.399999999999999" y="51.724137931034484"/>
         </view>
     </objects>
     <resources>

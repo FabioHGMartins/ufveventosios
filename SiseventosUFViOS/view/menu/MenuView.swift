@@ -18,6 +18,9 @@ class MenuView: UIViewController {
     @IBOutlet var notificacoesBt:UIButton?
     @IBOutlet var sobreBt:UIButton?
     @IBOutlet var sairBt:UIButton?
+    
+    @IBOutlet var iconEditarPerfil:UIImageView?
+    @IBOutlet var iconNotificacoes:UIImageView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,22 @@ class MenuView: UIViewController {
         self.view.addGestureRecognizer(swipeLeft)
         
         nomeUsuarioLb?.text = UsuarioSingleton.shared.usuario?.nome
+        
+        configuraMenuParaUserAnonimo()
+    }
+    
+    func configuraMenuParaUserAnonimo(){
+        print("\n\nConigurar menu para usuário anonimo entrou\n\n")
+        
+        if UsuarioSingleton.shared.usuario?.email == "login_anonimo@anonimo.com" {
+            editarPerfilBt?.isHidden = true
+            iconEditarPerfil?.isHidden = true
+            
+            notificacoesBt?.isHidden = true
+            iconNotificacoes?.isHidden = true
+            
+            sairBt?.setTitle("Login", for: .normal)
+        }
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {

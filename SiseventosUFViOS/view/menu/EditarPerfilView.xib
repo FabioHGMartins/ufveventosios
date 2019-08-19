@@ -32,6 +32,7 @@
                 <outlet property="senhaNovaTf" destination="60k-61-PEo" id="JK1-BX-MxF"/>
                 <outlet property="senhaNovaTfErro" destination="vYD-pk-ZM0" id="mP3-NQ-C65"/>
                 <outlet property="sexoPicker" destination="iHB-uk-11O" id="oO2-BA-2P4"/>
+                <outlet property="switchDataNascimento" destination="2k6-hQ-ZRv" id="INf-X6-lb7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -365,6 +366,16 @@
                                             <rect key="frame" x="147" y="420" width="20" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </activityIndicatorView>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2k6-hQ-ZRv">
+                                            <rect key="frame" x="256" y="820" width="51" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="vk0-YP-gVw"/>
+                                            </constraints>
+                                            <color key="onTintColor" red="0.64827251429999999" green="0.14249688390000001" blue="0.20504713059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="escolheOpcaoPorDataNascimento" destination="-1" eventType="valueChanged" id="yfq-Fk-1tn"/>
+                                            </connections>
+                                        </switch>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -379,6 +390,7 @@
                                         <constraint firstItem="Lyn-jS-9Og" firstAttribute="leading" secondItem="Zqq-ix-k4d" secondAttribute="leading" constant="8" id="D8c-S8-xHM"/>
                                         <constraint firstItem="9Up-eA-Has" firstAttribute="top" secondItem="Xge-wg-2dG" secondAttribute="bottom" constant="20" id="EPC-y0-bwN"/>
                                         <constraint firstItem="l9J-qc-w0V" firstAttribute="top" secondItem="GZy-TW-wag" secondAttribute="bottom" constant="8" id="FPX-FE-Z4i"/>
+                                        <constraint firstAttribute="trailing" secondItem="2k6-hQ-ZRv" secondAttribute="trailing" constant="10" id="Ffg-lK-whb"/>
                                         <constraint firstItem="VI9-LF-LNe" firstAttribute="centerY" secondItem="9Up-eA-Has" secondAttribute="centerY" id="GQy-s0-9kL"/>
                                         <constraint firstItem="jog-xV-MSU" firstAttribute="leading" secondItem="Zqq-ix-k4d" secondAttribute="leading" constant="8" id="HPq-m4-7TY"/>
                                         <constraint firstItem="9Up-eA-Has" firstAttribute="leading" secondItem="Zqq-ix-k4d" secondAttribute="leading" constant="8" id="HlO-Hs-7ed"/>
@@ -417,6 +429,7 @@
                                         <constraint firstItem="SrB-a3-52N" firstAttribute="leading" secondItem="Zqq-ix-k4d" secondAttribute="leading" constant="8" id="ZIT-1N-n2F"/>
                                         <constraint firstItem="Xge-wg-2dG" firstAttribute="leading" secondItem="Zqq-ix-k4d" secondAttribute="leading" constant="8" id="ae2-Ez-zay"/>
                                         <constraint firstItem="60k-61-PEo" firstAttribute="leading" secondItem="Zqq-ix-k4d" secondAttribute="leading" constant="8" id="al2-OF-q5C"/>
+                                        <constraint firstItem="2k6-hQ-ZRv" firstAttribute="centerY" secondItem="ZWr-Kw-qbI" secondAttribute="centerY" id="bB7-Rn-c67"/>
                                         <constraint firstAttribute="trailing" secondItem="ZWr-Kw-qbI" secondAttribute="trailing" constant="8" id="cCI-5K-JNX"/>
                                         <constraint firstItem="ZWr-Kw-qbI" firstAttribute="top" secondItem="orN-ci-aPL" secondAttribute="bottom" constant="20" id="cqH-Nx-j8R"/>
                                         <constraint firstItem="TP0-U6-Plm" firstAttribute="top" secondItem="vYD-pk-ZM0" secondAttribute="bottom" constant="20" id="dKV-ME-Zru"/>
