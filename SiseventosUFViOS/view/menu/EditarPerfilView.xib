@@ -187,12 +187,13 @@
                                                 <constraint firstAttribute="width" constant="45" id="ueB-r6-Hin"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="tintColor" red="0.64827251429999999" green="0.14249688390000001" blue="0.20504713059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Alterar">
-                                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleColor" red="0.64827251429999999" green="0.14249688390000001" blue="0.20504713059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" red="0.64827251429999999" green="0.14249688390000001" blue="0.20504713059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <integer key="value" value="11"/>
@@ -238,15 +239,16 @@
                                                 <constraint firstAttribute="width" constant="45" id="l9U-xd-DgN"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="tintColor" red="0.64827251429999999" green="0.14249688390000001" blue="0.20504713059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Alterar">
-                                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleColor" red="0.64827251429999999" green="0.14249688390000001" blue="0.20504713059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="11"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" red="0.20316579879999999" green="0.54203536890000004" blue="0.92944630719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" red="0.64827251429999999" green="0.14249688390000001" blue="0.20504713059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>

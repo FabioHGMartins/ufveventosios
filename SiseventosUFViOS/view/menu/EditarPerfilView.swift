@@ -72,7 +72,11 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
         self.sexoPicker?.dataSource = self
         
         pickerData = ["Prefiro não dizer","Feminino","Masculino","Outro"]
-        sexoSelecionado = pickerData[(sexoPicker?.selectedRow(inComponent: 0))!]
+        sexoSelecionado = UsuarioSingleton.shared.usuario!.sexo!
+        
+        //sexoSelecionado = pickerData[(sexoPicker?.selectedRow(inComponent: 0))!]
+        
+        print("\n\nviewDidLoad: ", sexoSelecionado, "\n\n")
         
         var menorData: Date {
             return (Calendar.current as NSCalendar).date(byAdding: .year, value: -120, to: Date(), options: [])!
@@ -104,7 +108,7 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
             print(date!)
         }
         
-        //TODO: resolver este problema. Quando não seleciona sexo na edição e mantem o carregado, zera a escolha
+        //Seleciona o sexo correto no carregamento da tela
         sexoPicker?.selectRow(getPickerRow((usuario!.sexo)!), inComponent: 0, animated: false)
         
         requester = UsuarioRequester(self)
@@ -112,7 +116,8 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
     }
     
     func getPickerRow(_ sexo: String) -> Int {
-        //TODO: colocar log em todas as opções
+        print("\n\ngetPickerRow: ", sexo, "\n\n")
+        
         if(sexo == "p") {
             return 0
         } else if(sexo == "f") {
@@ -157,8 +162,7 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
                 dt_nasc = "1900-1-1"
             }
             
-            //TODO: melhorar esse log
-            print(sexoSelecionado)
+            print("\n\nConfirmação: ", sexoSelecionado, "\n\n")
             
             let usuario = Usuario(id: (UsuarioSingleton.shared.usuario?.id)!,nome: (nomeTf?.text)!, email: usuarioNovo, senha: senhaNova, nascimento: dt_nasc, sexo: sexoSelecionado)
             self.progress!.startAnimating()
@@ -307,7 +311,10 @@ class EditarPerfilView: UIViewController, UIPickerViewDelegate, UIPickerViewData
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //chamado toda vez que uma opção de sexo é escolhida
+        print("\n\npickerView: ", row, "\n\n")
         switch row {
+            
         case 0:
             sexoSelecionado = "p"
             break

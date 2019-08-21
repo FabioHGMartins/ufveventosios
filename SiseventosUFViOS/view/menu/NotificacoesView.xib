@@ -38,6 +38,7 @@
                     <subviews>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="giV-z7-XJa">
                             <rect key="frame" x="8" y="11" width="51" height="31"/>
+                            <color key="onTintColor" red="0.64827251429999999" green="0.14249688390000001" blue="0.20504713059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habilitar notificações" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2a-LR-2vB">
                             <rect key="frame" x="65" y="16" width="262" height="20.5"/>
@@ -47,6 +48,7 @@
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PEF-1u-d30">
                             <rect key="frame" x="8" y="47.5" width="51" height="31"/>
+                            <color key="onTintColor" red="0.64827251429999999" green="0.14249688390000001" blue="0.20504713059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adicionar eventos à agenda" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0z-xK-ppQ">
                             <rect key="frame" x="65" y="52.5" width="262" height="20.5"/>
