@@ -11,5 +11,8 @@ import UIKit
 
 class CategoriaCell:UITableViewCell {
     @IBOutlet var switcher:UISwitch?
-    @IBOutlet var categoriaLb:UILabel?    
+    @IBOutlet var categoriaLb:UILabel?
+    var categoriaId:String!
+    var categoriaNome:String!
+    
 }

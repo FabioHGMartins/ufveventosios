@@ -68,6 +68,9 @@ class PrincipalView: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.progress?.startAnimating()
+        
+        print("Atualizei as categorias")
+        
         if(UsuarioSingleton.shared.categoriasUpdate) {
             if ((UsuarioSingleton.shared.categoriasPref?.isEmpty)!) {
                 requester.getEventos(offset: offset, limit: limit) { (ready, success) in

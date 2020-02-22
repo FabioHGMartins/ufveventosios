@@ -47,15 +47,52 @@ class FiltrarCategoriasView: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    @IBAction func aplicarFiltro() {
-        let aux = UsuarioSingleton.shared.categoriasPref
-        UsuarioSingleton.shared.categoriasPref = Array<Categoria>()
-        for i in 0..<(cells?.count)! {
-            if (cells![i].switcher?.isOn)! {
-                UsuarioSingleton.shared.categoriasPref?.append(Categoria("\(i+1)",(cells![i].categoriaLb?.text)!))
+    @objc func atualizaSwitchCategoria(_ sender:UISwitch){
+        let array = sender.restorationIdentifier!.components(separatedBy: "##")
+        print(array[0], " ", array[1])  //id e nome
+        
+        if (sender.isOn == true){
+            print("UISwitch state is now ON")
+            
+            UsuarioSingleton.shared.categoriasPref?.append(Categoria(array[0],array[1]))
+            print("adicionei")
+        }
+        else{
+            print("UISwitch state is now Off")
+            
+            for i in 0...UsuarioSingleton.shared.categoriasPref!.count {
+                if (UsuarioSingleton.shared.categoriasPref![i].id == array[0]){
+                    UsuarioSingleton.shared.categoriasPref!.remove(at: i)
+                    print("deletei")
+                    break
+                }
             }
         }
-        print(UsuarioSingleton.shared.categoriasPref!)
+    }
+    
+    @IBAction func aplicarFiltro() {
+       //let aux = UsuarioSingleton.shared.categoriasPref
+        //UsuarioSingleton.shared.categoriasPref = Array<Categoria>()
+        
+        for i in 0..<(cells?.count)! {
+            if (cells![i].switcher?.isOn)! {
+                
+                //se uma categoria nova for selecionada alem das preferidas, sera adicionada na lista
+                if(!(UsuarioSingleton.shared.categoriasPref?.contains(Categoria((cells![i].categoriaId),(cells![i].categoriaNome))))!){
+                    UsuarioSingleton.shared.categoriasPref?.append(Categoria((cells![i].categoriaId),(cells![i].categoriaNome)))
+                }
+            }
+        }
+        
+        //TODO: TESTE PARA VER CATEGORIAS PREFERIDAS
+        let total = UsuarioSingleton.shared.categoriasPref?.count
+        var i = 0
+        while i < total!{
+            print(UsuarioSingleton.shared.categoriasPref![i].nome, " - ", UsuarioSingleton.shared.categoriasPref![i].id)
+            i = i + 1
+        }
+        print(" ")
+    
         var ids = Array<String>()
         for cat in UsuarioSingleton.shared.categoriasPref! {
             ids.append(cat.id)
@@ -63,7 +100,7 @@ class FiltrarCategoriasView: UIViewController, UITableViewDelegate, UITableViewD
         requester.putPreferenciasCategorias(idUsuario: (UsuarioSingleton.shared.usuario?.id)!, idCategorias: ids) { (ready,success) in
             if (ready) {
                 if (!success) {
-                    UsuarioSingleton.shared.categoriasPref = aux
+                    //UsuarioSingleton.shared.categoriasPref = aux
                 }
                 self.navigationController?.popViewController(animated: true)
             }
@@ -84,7 +121,18 @@ class FiltrarCategoriasView: UIViewController, UITableViewDelegate, UITableViewD
         cells?.append(cell)
 
         cell.categoriaLb?.text = categoria.nome
+        
+        cell.categoriaId = categoria.id
+        cell.categoriaNome = categoria.nome
+        
+        //registra tag para switch e associa tratamento de evento
+        cell.switcher?.restorationIdentifier = categoria.id + "##" + categoria.nome
+        cell.switcher?.addTarget(self, action: #selector(atualizaSwitchCategoria(_:)), for: .valueChanged)
+        
         cell.switcher?.isOn = (UsuarioSingleton.shared.categoriasPref?.contains(categoria))!
+        
+        //print("chamei celula", " - ", categoria.nome)
+        
         return cell
     }
     

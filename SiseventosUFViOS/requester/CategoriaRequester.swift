@@ -39,7 +39,17 @@ class CategoriaRequester {
             var categorias: Array<Categoria>?
             if let responseData =  info{
                 let decoder = JSONDecoder()
+                
                 categorias = try? decoder.decode(Array<Categoria>.self, from: responseData)
+                
+                //TODO: TESTE PARA VER CATEGORIAS PREFERIDAS
+                var total = categorias?.count
+                var i = 0
+                while i < total!{
+                    print(categorias![i].nome)
+                    i = i + 1
+                }
+                print(" ")
             }
             UsuarioSingleton.shared.categoriasPref = categorias!
             
