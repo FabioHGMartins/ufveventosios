@@ -24,9 +24,16 @@ class UsuarioRequester {
     func login(user: String, senha: String, handleFinish:@escaping ((ready:Bool,success:Bool))->()){
         self.postUsuarioAuth(user: user, senha: senha, callbackSuccess: { (responseObject) in
             if let usuario = responseObject {
+                
                 UsuarioSingleton.shared.usuario = usuario
                 AppControl.preferences.set(true, forKey: "logado")
-                AppControl.preferences.set(usuario.email, forKey: "email")
+                
+                if(user == "login_anonimo@anonimo.com"){
+                    AppControl.preferences.set(user, forKey: "email")
+                }else{
+                    AppControl.preferences.set(usuario.email, forKey: "email")
+                }
+                
                 AppControl.preferences.set(senha, forKey: "senha")
                 
                 let categoriasRequester = CategoriaRequester()

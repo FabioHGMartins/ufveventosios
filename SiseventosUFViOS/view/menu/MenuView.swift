@@ -37,7 +37,7 @@ class MenuView: UIViewController {
     func configuraMenuParaUserAnonimo(){
         print("\n\nConfigurar menu para usuário anonimo entrou\n\n")
         
-        if UsuarioSingleton.shared.usuario?.email == "login_anonimo@anonimo.com" {
+        if ((UsuarioSingleton.shared.usuario?.email.contains("@anonimo.com"))!) {
             editarPerfilBt?.isHidden = true
             iconEditarPerfil?.isHidden = true
             

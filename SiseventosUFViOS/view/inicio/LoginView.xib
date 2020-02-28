@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,21 +27,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_login.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y4D-KU-N2r">
-                    <rect key="frame" x="0.0" y="20" width="375" height="210"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                     <color key="backgroundColor" red="0.64710301160812378" green="0.14071249961853027" blue="0.20503330230712891" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Y4D-KU-N2r" secondAttribute="height" multiplier="25:14" id="UZg-Mb-rKC"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lW9-2Z-e3y">
-                    <rect key="frame" x="30" y="170" width="315" height="320"/>
+                    <rect key="frame" x="30" y="150" width="315" height="300"/>
                     <subviews>
                         <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJn-LN-eTq">
                             <rect key="frame" x="8" y="152" width="299" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="cSe-NE-UUN"/>
                             </constraints>
-                            <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             <connections>
@@ -61,14 +58,13 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TAX-um-9Nr">
-                            <rect key="frame" x="147.5" y="163.5" width="20" height="20"/>
+                            <rect key="frame" x="147.5" y="173.5" width="20" height="20"/>
                         </activityIndicatorView>
                         <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CFp-56-5W5">
                             <rect key="frame" x="8" y="46" width="299" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="pyv-Ms-p3i"/>
                             </constraints>
-                            <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             <connections>
@@ -179,7 +175,7 @@
                     </variation>
                 </view>
                 <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Não possui conta?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qbO-nV-39M">
-                    <rect key="frame" x="30" y="510" width="187" height="30"/>
+                    <rect key="frame" x="30" y="460" width="187" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="4cV-ha-8I6"/>
                     </constraints>
@@ -188,7 +184,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceu-6M-b5z">
-                    <rect key="frame" x="225" y="560" width="120" height="30"/>
+                    <rect key="frame" x="225" y="500" width="120" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="adU-VD-rnY"/>
                     </constraints>
@@ -201,7 +197,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jw-u7-pZ5">
-                    <rect key="frame" x="225" y="510" width="74" height="30"/>
+                    <rect key="frame" x="225" y="460" width="74" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Cum-9N-tds"/>
                     </constraints>
@@ -214,7 +210,7 @@
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOa-my-pNJ" customClass="GIDSignInButton">
-                    <rect key="frame" x="30" y="554.5" width="157.5" height="41"/>
+                    <rect key="frame" x="30" y="494.5" width="157.5" height="41"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="OOa-my-pNJ" secondAttribute="height" multiplier="157:41" id="n2B-6C-iL4"/>
